@@ -187,6 +187,7 @@
     .mobile-menu.active a:nth-child(3) { transition-delay: 0.3s; }
     .mobile-menu.active a:nth-child(4) { transition-delay: 0.4s; }
     .mobile-menu.active a:nth-child(5) { transition-delay: 0.5s; }
+    .mobile-menu.active a:nth-child(6) { transition-delay: 0.6s; }
 
     .mobile-menu a:hover,
     .mobile-menu a:active {
@@ -198,6 +199,51 @@
     /* Desktop nav (hidden on mobile) */
     .nav-actions {
       display: none;
+    }
+
+    /* Tutor Registration Button - Mobile Only */
+    .tutor-register-btn {
+      position: fixed;
+      top: 40%;
+      left: 4px;
+      transform: translateY(-50%);
+      background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+      color: white;
+      padding: 16px 6px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 11px;
+      box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+      transition: all 0.3s ease;
+      text-align: center;
+      line-height: 1.1;
+      min-height: 120px;
+      width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      z-index: 45;
+      -webkit-tap-highlight-color: rgba(255, 107, 53, 0.3);
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      letter-spacing: 1px;
+    }
+
+    .tutor-register-btn:hover,
+    .tutor-register-btn:focus {
+      background: linear-gradient(135deg, #E55A30 0%, #E6851A 100%);
+      transform: translateY(-50%) scale(1.05);
+      box-shadow: 0 6px 25px rgba(255, 107, 53, 0.6);
+    }
+
+    .tutor-register-btn:active {
+      transform: translateY(-50%) scale(0.95);
+      transition: transform 0.1s ease;
     }
 
     /* Enhanced mobile-optimized buttons */
@@ -673,6 +719,14 @@
         padding: 10px 14px;
         max-width: 160px;
       }
+      
+      .tutor-register-btn {
+        left: 2px;
+        width: 40px;
+        font-size: 10px;
+        min-height: 100px;
+        padding: 12px 4px;
+      }
     }
 
     @media (max-width: 320px) {
@@ -680,6 +734,14 @@
         font-size: 10px;
         padding: 8px 12px;
         max-width: 140px;
+      }
+      
+      .tutor-register-btn {
+        left: 1px;
+        width: 36px;
+        font-size: 9px;
+        min-height: 90px;
+        padding: 10px 3px;
       }
     }
 
@@ -693,6 +755,10 @@
       .cta-float {
         bottom: max(20px, env(safe-area-inset-bottom));
         right: max(16px, env(safe-area-inset-right));
+      }
+      
+      .tutor-register-btn {
+        left: max(2px, env(safe-area-inset-left));
       }
     }
 
@@ -918,6 +984,11 @@
       .cta-float {
         bottom: 10px;
       }
+      
+      .tutor-register-btn {
+        top: 20px;
+        transform: translateY(0);
+      }
     }
 
     /* Dark mode support */
@@ -1062,6 +1133,8 @@
         bottom: 10px;
       }
     }
+
+    /* Hide tutor register button on desktop */
     @media (min-width: 768px) {
       .container {
         padding: 0 32px;
@@ -1078,6 +1151,10 @@
       }
 
       .mobile-menu {
+        display: none;
+      }
+
+      .tutor-register-btn {
         display: none;
       }
 
@@ -1162,8 +1239,14 @@
       <a href="sat.html">📚 SAT</a>
       <a href="institutions.html">🏛️ Tuitions</a>
       <a href="#contact" onclick="closeMenuAndOpenContact()">📞 Contact</a>
+      <a href="tutor.html" onclick="closeMenuOnLinkClick()">👨‍🏫 Register as Tutor</a>
     </nav>
   </header>
+
+  <!-- Tutor Registration Button - Mobile Only (Left Side) -->
+  <a class="tutor-register-btn" href="tutor.html" aria-label="Register as a Tutor">
+    REGISTER AS A TUTOR
+  </a>
 
   <!-- Reviews: horizontal scroll -->
   <section class="container">
