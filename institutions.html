@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IITuitions — IIT Coaching</title>
+  <meta name="description" content="IIT-JEE coaching with diagnostics, mentorship, weekly tests and proven ranks.">
+  <style>
+    /* Reset and base styles - Mobile First */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px; /* Prevents iOS zoom on form inputs */
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fff;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Mobile-first container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      width: 100%;
+    }
+
+    /* Mobile-first header with enhanced optimization */
+    .site-header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 0;
+      width: 100%;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Space between hamburger and contact button */
+      min-height: 44px; /* iOS minimum touch target */
+      position: relative;
+    }
+
+    /* Mobile hamburger menu */
+    .hamburger-menu {
+      background: none;
+      border: none;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      padding: 0;
+    }
+
+    .hamburger-menu span {
+      width: 24px;
+      height: 3px;
+      background: #333;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    .hamburger-menu.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger-menu.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-menu.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Mobile menu overlay */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 200;
+    }
+
+    .mobile-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 20px 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu.active a {
+      transform: translateY(0);
+    }
+
+    .mobile-menu a:hover {
+      color: #4CAF50;
+    }
+
+    /* Enhanced mobile-optimized buttons */
+    .btn {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      font-size: 16px;
+      text-align: center;
+      min-height: 44px; /* iOS minimum touch target */
+      min-width: 44px;
+      -webkit-tap-highlight-color: rgba(76, 175, 80, 0.3);
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background: #45a049;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+      transition: transform 0.1s ease;
+    }
+
+    .btn-primary {
+      background: #4CAF50;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #4CAF50;
+      border: 2px solid #4CAF50;
+    }
+
+    .btn-outline:hover,
+    .btn-outline:focus {
+      background: #4CAF50;
+      color: white;
+    }
+
+    /* Page hero */
+    .page-hero {
+      text-align: center;
+      padding: 40px 16px 60px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .page-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .page-sub {
+      font-size: 18px;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Section styling */
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      margin: 40px 0 30px;
+      color: #333;
+    }
+
+    /* Why hero section */
+    .why-hero {
+      background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+      color: white;
+      padding: 60px 0;
+      margin: 60px 0;
+    }
+
+    .why-hero h2 {
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+    }
+
+    /* Horizontal scroll cards */
+    .h-scroll {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 20px 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .h-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .h-scroll::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+
+    .h-scroll::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+
+    /* Card styles */
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      min-width: 280px;
+      scroll-snap-align: start;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .story-card .card-profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+
+    .muted {
+      color: #888;
+      font-size: 14px;
+    }
+
+    /* Stars rating */
+    .stars {
+      display: flex;
+      gap: 2px;
+    }
+
+    .stars::before {
+      content: "⭐⭐⭐⭐⭐";
+      color: #ffc107;
+    }
+
+    /* Review cards */
+    .review-card {
+      text-align: center;
+    }
+
+    .reviewer {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    /* Video wrapper */
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      margin: 30px 0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Footer */
+    .footer-pro {
+      background: #333;
+      color: white;
+      margin-top: 80px;
+    }
+
+    .footer-top {
+      padding: 40px 16px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .brand-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .brand-logo {
+      font-size: 24px;
+    }
+
+    .brand-name {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .brand-copy {
+      color: #ccc;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .foot-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #4CAF50;
+    }
+
+    .foot-links {
+      list-style: none;
+    }
+
+    .foot-links li {
+      margin-bottom: 8px;
+    }
+
+    .foot-links a, .foot-contacts a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .foot-links a:hover, .foot-contacts a:hover {
+      color: #4CAF50;
+    }
+
+    .foot-contacts {
+      list-style: none;
+    }
+
+    .foot-contacts li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .ico {
+      font-size: 16px;
+      min-width: 20px;
+    }
+
+    .footer-bar {
+      background: #222;
+      padding: 20px 16px;
+      text-align: center;
+      border-top: 1px solid #444;
+    }
+
+    .bar-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .bar-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .bar-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    /* Floating action buttons */
+    .wa-float {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      z-index: 50;
+      transition: all 0.3s ease;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+    }
+
+    .cta-float-right {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #4CAF50;
+      color: white;
+      padding: 16px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
+      z-index: 50;
+      transition: all 0.3s ease;
+      max-width: 200px;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .cta-float-right:hover {
+      background: #45a049;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(76, 175, 80, 0.6);
+    }
+
+    /* Steps container styling */
+    .steps-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .step-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border-left: 5px solid #4CAF50;
+      transition: transform 0.3s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    .step-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #4CAF50;
+      margin-bottom: 12px;
+    }
+
+    .step-description {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .step-points {
+      list-style: none;
+      padding: 0;
+    }
+
+    .step-points li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 10px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .step-points li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #4CAF50;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    /* Responsive design */
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 32px;
+      }
+
+      .page-title {
+        font-size: 48px;
+      }
+
+      .page-sub {
+        font-size: 20px;
+      }
+
+      .section-title {
+        font-size: 36px;
+      }
+
+      .why-hero h2 {
+        font-size: 48px;
+      }
+
+      .steps-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+      }
+
+      .footer-top {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 40px;
+      }
+
+      .bar-grid {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .header-row {
+        justify-content: space-between; /* Desktop layout */
+      }
+
+      /* Hide hamburger and mobile contact, show desktop nav */
+      .hamburger-menu {
+        display: none !important;
+      }
+
+      .mobile-contact {
+        display: none !important;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .mobile-menu {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .h-scroll {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        overflow: visible;
+      }
+
+      .card {
+        min-width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="hamburger-container">
+        <button class="hamburger-menu" id="hamburgerBtn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="mobile-menu" id="mobileMenu">
+          <a href="index.html">🏠 Home</a>
+          <a href="iit.html">🎓 IIT</a>
+          <a href="sat.html">📚 SAT</a>
+          <a href="institutions.html">🏛️ Tuitions</a>
+        </nav>
+      </div>
+      <div class="nav-actions">
+        <button class="btn btn-primary" onclick="document.getElementById('bookCTA').click()">Contact Us</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page title -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-title">IIT Coaching at IITuitions</h1>
+      <p class="page-sub">Precision assessments, IIT alumni mentors, and a relentless student-care system that converts effort into ranks.</p>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="container">
+    <h2 class="section-title">Student Success Stories</h2>
+    <div class="h-scroll snap-x" aria-label="IIT success stories">
+      <article class="card story-card">
+        <div class="card-profile">
+          <div class="avatar"><div style="background: #4CAF50; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">R</div></div>
+          <div><strong>Rohit — AIR 23</strong><div class="muted">IIT Bombay (CSE)</div></div>
+        </div>
+        <p class="quote">"Daily review calls and doubt clinics kept me razor sharp."</p>
+        <div class="stars" data-rating="5"></div>
+      </article>
+
+      <article class="card story-card">
+        <div class="card-profile">
+          <div class="avatar"><div style="background: #FF9800; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">A</div></div>
+          <div><strong>Ananya — AIR 55</strong><div class="muted">IIT Delhi (EE)</div></div>
+        </div>
+        <p class="quote">"Targeted practice on every weak topic."</p>
+        <div class="stars" data-rating="5"></div>
+      </article>
+
+      <article class="card story-card">
+        <div class="card-profile">
+          <div class="avatar"><div style="background: #2196F3; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">R</div></div>
+          <div><strong>Rahul — AIR 120</strong><div class="muted">IIT Madras (ME)</div></div>
+        </div>
+        <p class="quote">"Mocks felt like the real exam."</p>
+        <div class="stars" data-rating="4.5"></div>
+      </article>
+
+      <article class="card story-card">
+        <div class="card-profile">
+          <div class="avatar"><div style="background: #9C27B0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">M</div></div>
+          <div><strong>Meera — AIR 210</strong><div class="muted">IIT Kanpur (CE)</div></div>
+        </div>
+        <p class="quote">"Concept clarity + drills boosted my rank quickly."</p>
+        <div class="stars" data-rating="5"></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Why IITuitions -->
+  <section class="why-hero">
+    <div class="container">
+      <h2>Why IITuitions?</h2>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="container">
+    <h2 class="section-title">Assessment Process — Demo</h2>
+    <div class="video-wrap">
+      <iframe
+        title="IIT Assessment Demo"
+        src="https://www.youtube.com/embed/ysz5S6PUM-U"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- 3 Steps Success Formula -->
+  <section class="why-hero">
+    <div class="container">
+      <h2>Our 3-Step Success Formula</h2>
+    </div>
+  </section>
+
+  <!-- 3 Steps Content -->
+  <section class="container">
+    <div class="steps-container">
+      <div class="step-card">
+        <h3 class="step-title">1) Assess</h3>
+        <p class="step-description">Comprehensive diagnostic evaluation of current academic standing and learning gaps</p>
+        <ul class="step-points">
+          <li>Subject-wise skill mapping</li>
+          <li>Learning style identification</li>
+          <li>Prerequisite knowledge gaps</li>
+          <li>Performance benchmarking</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <h3 class="step-title">2) Plan</h3>
+        <p class="step-description">Customized curriculum design with personalized learning paths for each student</p>
+        <ul class="step-points">
+          <li>Individual study roadmaps</li>
+          <li>Weekly milestone targets</li>
+          <li>Resource allocation strategy</li>
+          <li>Progress monitoring schedule</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <h3 class="step-title">3) Execute</h3>
+        <p class="step-description">Systematic implementation with continuous monitoring and performance tracking</p>
+        <ul class="step-points">
+          <li>Interactive lesson delivery</li>
+          <li>Regular assessment cycles</li>
+          <li>Real-time feedback loops</li>
+          <li>Adaptive content adjustment</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parent Reviews -->
+  <section class="container">
+    <h2 class="section-title">Parent Reviews</h2>
+    <div class="h-scroll snap-x" aria-label="Parent reviews">
+      <article class="card review-card">
+        <h3 class="reviewer">Mrs. Kapoor</h3>
+        <div class="stars" data-rating="5"></div>
+        <p class="quote">"99 percentile in 4 months — the system works."</p>
+      </article>
+
+      <article class="card review-card">
+        <h3 class="reviewer">Mr. Rao</h3>
+        <div class="stars" data-rating="5"></div>
+        <p class="quote">"₹100 mentor sessions = weekly clarity & drive."</p>
+      </article>
+
+      <article class="card review-card">
+        <h3 class="reviewer">Mrs. Singh</h3>
+        <div class="stars" data-rating="4.5"></div>
+        <p class="quote">"Tests + follow-ups kept my child consistent."</p>
+      </article>
+
+      <article class="card review-card">
+        <h3 class="reviewer">Mr. Ahmed</h3>
+        <div class="stars" data-rating="5"></div>
+        <p class="quote">"Transparent analytics for parents — loved it."</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-pro">
+    <div class="container footer-top">
+      <div class="col brand-col">
+        <div class="brand-head"><span class="brand-logo">📘</span><span class="brand-name">IITuitions</span></div>
+        <p class="brand-copy">Helping students achieve <strong>IIT ranks</strong> and gain admission to top engineering colleges — with precision diagnostics, elite mentorship, and proven results — since 2010.</p>
+        <div class="socials"><a href="#" aria-label="Instagram" class="social-btn" style="color: #4CAF50; font-size: 20px;">📷</a></div>
+      </div>
+      <div class="col">
+        <h4 class="foot-title">Quick Links</h4>
+        <ul class="foot-links">
+          <li><a href="#success-stories">Student Results</a></li>
+          <li><a href="#why-iituitions">What We Offer</a></li>
+          <li><a href="#assessment">Our Faculty</a></li>
+          <li><a href="#parent-reviews">Student Community</a></li>
+          <li><a href="#contact">Register</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4 class="foot-title">Programs</h4>
+        <ul class="foot-links">
+          <li><a href="iit.html">IIT JEE Program</a></li>
+          <li><a href="sat.html">SAT Elite Program</a></li>
+          <li><a href="institutions.html">School Programs</a></li>
+          <li><a href="#mentorship">Mentorship Sessions</a></li>
+          <li><a href="#assessment">Free Assessment</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4 class="foot-title">Contact Us</h4>
+        <ul class="foot-contacts">
+          <li><span class="ico">📞</span><a href="tel:+917207467565">+91 72074 67565</a></li>
+          <li><span class="ico">✉️</span><a href="mailto:hello@iituitions.com">hello@iituitions.com</a></li>
+          <li class="addr">
+            <span class="ico">📍</span>
+            <div>iiTuitions Hub LLP,<br/>Nallagandla, Hyderabad 500019,<br/>India</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <div class="container bar-grid">
+        <div>© <span id="yr">2025</span> IITuitions. All rights reserved.</div>
+        <nav class="bar-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating actions -->
+  <a class="wa-float"
+     href="https://wa.me/917207467565?text=Hi%20IITuitions%2C%20I%20want%20a%20free%20assessment"
+     target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+  <a id="bookCTA" class="cta-float-right"
+     href="https://wa.me/917207467565?text=Hi%20IITuitions%2C%20book%20my%20free%20assessment"
+     target="_blank" rel="noopener">
+     Book Your Free Assessment Now
+  </a>
+
+  <script>
+    // Close menu and open contact modal
+    function closeMenuAndOpenContact() {
+      closeMenuOnLinkClick();
+      // Add contact functionality here if needed
+    }
+
+    // Mobile menu functionality
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const hamburger = document.getElementById('hamburgerBtn');
+      
+      if (menu && hamburger) {
+        menu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      }
+    }
+
+    // Close menu when clicking on a link (mobile only)
+    function closeMenuOnLinkClick() {
+      if (window.innerWidth < 768) {
+        const menu = document.getElementById('mobileMenu');
+        const btn = document.getElementById('hamburgerBtn');
+        
+        if (menu && btn) {
+          menu.classList.remove('active');
+          btn.classList.remove('active');
+        }
+      }
+    }
+
+    // Close menu when clicking outside (mobile only)
+    function closeMenuOnOutsideClick(e) {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.getElementById('hamburgerBtn');
+      
+      if (window.innerWidth < 768 && menu && btn && 
+          !menu.contains(e.target) && !btn.contains(e.target) && 
+          menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        btn.classList.remove('active');
+      }
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add click event to hamburger button
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', toggleMobileMenu);
+      }
+      
+      // Add click events to menu links
+      const menuLinks = document.querySelectorAll('#mobileMenu a');
+      menuLinks.forEach(link => {
+        if (!link.href.includes('#contact')) {
+          link.addEventListener('click', closeMenuOnLinkClick);
+        }
+      });
+      
+      // Add outside click listener
+      document.addEventListener('click', closeMenuOnOutsideClick);
+      
+      // Update year in footer
+      const yearElement = document.getElementById('yr');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.getElementById('hamburgerBtn');
+      
+      // Reset menu state on resize to desktop
+      if (window.innerWidth >= 768 && menu && btn) {
+        menu.classList.remove('active');
+        btn.classList.remove('active');
+      }
+    });
+
+    // Handle escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeMenuOnLinkClick();
+      }
+    });
+  </script>
+</body>
+</html>
