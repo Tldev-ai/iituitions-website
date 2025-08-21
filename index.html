@@ -22,8 +22,8 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       line-height: 1.6;
-      color: #333;
-      background: #fff;
+      color: #1e40af; /* Blue 700 for main text */
+      background: #ffffff; /* Pure white background */
       overflow-x: hidden; /* Prevent horizontal scroll */
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -37,16 +37,16 @@
       width: 100%;
     }
 
-    /* Mobile-first header with enhanced optimization */
+    /* Mobile-first header with blue theme */
     .site-header {
-      background: #fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(30, 64, 175, 0.1);
       position: sticky;
       top: 0;
       z-index: 100;
       padding: 16px 0;
       width: 100%;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      border-bottom: 2px solid rgba(30, 64, 175, 0.1);
     }
 
     .header-row {
@@ -66,7 +66,7 @@
     .logo-circle {
       width: 44px; /* iOS minimum touch target */
       height: 44px;
-      background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
       color: white;
       border-radius: 50%;
       display: flex;
@@ -80,7 +80,7 @@
     .brand-name {
       font-size: 22px;
       font-weight: 700;
-      color: #333;
+      color: #1e40af; /* Blue 700 */
       white-space: nowrap;
     }
 
@@ -99,17 +99,17 @@
       padding: 8px;
       border-radius: 8px;
       transition: background-color 0.3s ease;
-      -webkit-tap-highlight-color: rgba(76, 175, 80, 0.2);
+      -webkit-tap-highlight-color: rgba(29, 78, 216, 0.2);
     }
 
     .hamburger-menu:active {
-      background-color: rgba(76, 175, 80, 0.1);
+      background-color: rgba(29, 78, 216, 0.1);
     }
 
     .hamburger-menu span {
       width: 24px;
       height: 3px;
-      background: #333;
+      background: #1e40af;
       border-radius: 2px;
       transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transform-origin: center;
@@ -117,7 +117,7 @@
 
     .hamburger-menu.active span:nth-child(1) {
       transform: rotate(45deg) translate(6px, 6px);
-      background: #4CAF50;
+      background: #1d4ed8;
     }
 
     .hamburger-menu.active span:nth-child(2) {
@@ -127,10 +127,10 @@
 
     .hamburger-menu.active span:nth-child(3) {
       transform: rotate(-45deg) translate(6px, -6px);
-      background: #4CAF50;
+      background: #1d4ed8;
     }
 
-    /* Enhanced mobile menu overlay */
+    /* Enhanced mobile menu overlay with blue theme */
     .mobile-menu {
       position: fixed;
       top: 0;
@@ -138,7 +138,7 @@
       width: 100%;
       height: 100vh;
       height: 100dvh; /* Dynamic viewport height for mobile browsers */
-      background: rgba(0,0,0,0.95);
+      background: rgba(30, 64, 175, 0.95);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       display: flex;
@@ -174,7 +174,7 @@
       align-items: center;
       justify-content: center;
       white-space: nowrap;
-      -webkit-tap-highlight-color: rgba(76, 175, 80, 0.3);
+      -webkit-tap-highlight-color: rgba(29, 78, 216, 0.3);
     }
 
     .mobile-menu.active a {
@@ -191,8 +191,8 @@
 
     .mobile-menu a:hover,
     .mobile-menu a:active {
-      background: rgba(76, 175, 80, 0.2);
-      color: #4CAF50;
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
       transform: translateY(0) scale(1.05);
     }
 
@@ -201,50 +201,11 @@
       display: none;
     }
 
-    /* Updated Tutor Registration Button - Below hamburger menu, horizontal layout */
-    .tutor-register-btn {
-      position: fixed;
-      top: 70px; /* Below the header */
-      right: 16px;
-      background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-      color: white;
-      padding: 12px 16px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 11px;
-      box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
-      transition: all 0.3s ease;
-      text-align: center;
-      line-height: 1.2;
-      min-height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      white-space: nowrap;
-      z-index: 45;
-      -webkit-tap-highlight-color: rgba(255, 107, 53, 0.3);
-      touch-action: manipulation;
-      user-select: none;
-      -webkit-user-select: none;
-      letter-spacing: 0.5px;
-    }
 
-    .tutor-register-btn:hover,
-    .tutor-register-btn:focus {
-      background: linear-gradient(135deg, #E55A30 0%, #E6851A 100%);
-      transform: scale(1.05);
-      box-shadow: 0 6px 25px rgba(255, 107, 53, 0.6);
-    }
 
-    .tutor-register-btn:active {
-      transform: scale(0.95);
-      transition: transform 0.1s ease;
-    }
-
-    /* Enhanced mobile-optimized buttons */
+    /* Enhanced mobile-optimized buttons - Blue theme */
     .btn {
-      background: #4CAF50;
+      background: #1d4ed8;
       color: white;
       border: none;
       padding: 14px 24px;
@@ -260,7 +221,7 @@
       text-align: center;
       min-height: 44px; /* iOS minimum touch target */
       min-width: 44px;
-      -webkit-tap-highlight-color: rgba(76, 175, 80, 0.3);
+      -webkit-tap-highlight-color: rgba(29, 78, 216, 0.3);
       touch-action: manipulation;
       user-select: none;
       -webkit-user-select: none;
@@ -268,9 +229,9 @@
 
     .btn:hover,
     .btn:focus {
-      background: #45a049;
+      background: #1e40af;
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+      box-shadow: 0 4px 15px rgba(29, 78, 216, 0.3);
     }
 
     .btn:active {
@@ -280,13 +241,13 @@
 
     .btn-outline {
       background: transparent;
-      color: #4CAF50;
-      border: 2px solid #4CAF50;
+      color: #1d4ed8;
+      border: 2px solid #1d4ed8;
     }
 
     .btn-outline:hover,
     .btn-outline:focus {
-      background: #4CAF50;
+      background: #1d4ed8;
       color: white;
     }
 
@@ -300,7 +261,7 @@
       font-weight: 700;
       text-align: center;
       margin: 40px 0 30px;
-      color: #333;
+      color: #1e40af;
     }
 
     /* Mobile-optimized horizontal scroll */
@@ -314,7 +275,7 @@
       -webkit-overflow-scrolling: touch;
       scroll-behavior: smooth;
       scrollbar-width: thin;
-      scrollbar-color: #4CAF50 transparent;
+      scrollbar-color: #1d4ed8 transparent;
     }
 
     .h-scroll::-webkit-scrollbar {
@@ -322,17 +283,17 @@
     }
 
     .h-scroll::-webkit-scrollbar-track {
-      background: rgba(76, 175, 80, 0.1);
+      background: rgba(29, 78, 216, 0.1);
       border-radius: 3px;
     }
 
     .h-scroll::-webkit-scrollbar-thumb {
-      background: #4CAF50;
+      background: #1d4ed8;
       border-radius: 3px;
     }
 
     .h-scroll::-webkit-scrollbar-thumb:hover {
-      background: #45a049;
+      background: #1e40af;
     }
 
     /* Card styles */
@@ -340,12 +301,14 @@
       background: white;
       border-radius: 16px;
       padding: 24px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(30, 64, 175, 0.1);
       transition: transform 0.3s ease;
+      border: 1px solid rgba(30, 64, 175, 0.1);
     }
 
     .card:hover {
       transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(30, 64, 175, 0.15);
     }
 
     .review-card {
@@ -364,7 +327,7 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: #4CAF50;
+      background: #1d4ed8;
       color: white;
       display: flex;
       align-items: center;
@@ -375,20 +338,20 @@
 
     .quote {
       font-style: italic;
-      color: #666;
+      color: #374151;
       margin-bottom: 12px;
       font-size: 16px;
     }
 
     .muted {
-      color: #888;
+      color: #6b7280;
       font-size: 14px;
     }
 
     /* Stars rating */
     .stars::before {
       content: "⭐⭐⭐⭐⭐";
-      color: #ffc107;
+      color: #f59e0b;
     }
 
     /* Programs grid */
@@ -410,11 +373,11 @@
       font-weight: 700;
       margin-bottom: 12px;
       text-align: center;
-      color: #333;
+      color: #1e40af;
     }
 
     .cards-grid p {
-      color: #666;
+      color: #374151;
       text-align: center;
       margin-bottom: 20px;
       line-height: 1.6;
@@ -426,10 +389,10 @@
     }
 
     .contact-card {
-      background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(69, 160, 73, 0.1));
+      background: linear-gradient(135deg, rgba(29, 78, 216, 0.05), rgba(30, 64, 175, 0.05));
       border-radius: 20px;
       padding: 30px;
-      border: 1px solid rgba(76, 175, 80, 0.2);
+      border: 1px solid rgba(29, 78, 216, 0.2);
     }
 
     .contact-head {
@@ -440,12 +403,12 @@
     .contact-head h2 {
       font-size: 32px;
       font-weight: 700;
-      color: #333;
+      color: #1e40af;
       margin-bottom: 10px;
     }
 
     .badge-open {
-      background: #4CAF50;
+      background: #1d4ed8;
       color: white;
       padding: 8px 16px;
       border-radius: 20px;
@@ -473,12 +436,12 @@
 
     .info-title {
       font-weight: 600;
-      color: #333;
+      color: #1e40af;
       margin-bottom: 5px;
     }
 
     .info-sub {
-      color: #666;
+      color: #374151;
       font-size: 14px;
     }
 
@@ -489,7 +452,7 @@
     }
 
     .chip {
-      background: #4CAF50;
+      background: #1d4ed8;
       color: white;
       padding: 8px 16px;
       border-radius: 20px;
@@ -500,7 +463,7 @@
     }
 
     .chip:hover {
-      background: #45a049;
+      background: #1e40af;
       transform: translateY(-2px);
     }
 
@@ -517,6 +480,7 @@
       border-radius: 12px;
       padding: 20px;
       margin-top: 20px;
+      border: 1px solid rgba(29, 78, 216, 0.1);
     }
 
     .hours li {
@@ -524,7 +488,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 8px 0;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid rgba(29, 78, 216, 0.1);
     }
 
     .hours li:last-child {
@@ -532,17 +496,17 @@
     }
 
     .hours span {
-      color: #666;
+      color: #374151;
     }
 
     .hours b {
-      color: #4CAF50;
+      color: #1d4ed8;
       font-weight: 600;
     }
 
     /* Footer */
     .footer-pro {
-      background: #333;
+      background: #1e40af;
       color: white;
       margin-top: 80px;
     }
@@ -568,10 +532,11 @@
     .brand-name {
       font-size: 24px;
       font-weight: 700;
+      color: white;
     }
 
     .brand-copy {
-      color: #ccc;
+      color: #bfdbfe;
       margin-bottom: 20px;
       line-height: 1.6;
     }
@@ -580,7 +545,7 @@
       font-size: 18px;
       font-weight: 600;
       margin-bottom: 16px;
-      color: #4CAF50;
+      color: #dbeafe;
     }
 
     .foot-links {
@@ -592,13 +557,13 @@
     }
 
     .foot-links a, .foot-contacts a {
-      color: #ccc;
+      color: #bfdbfe;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     .foot-links a:hover, .foot-contacts a:hover {
-      color: #4CAF50;
+      color: white;
     }
 
     .foot-contacts {
@@ -618,10 +583,10 @@
     }
 
     .footer-bar {
-      background: #222;
+      background: #1e3a8a;
       padding: 20px 16px;
       text-align: center;
-      border-top: 1px solid #444;
+      border-top: 1px solid #3b82f6;
     }
 
     .bar-grid {
@@ -639,7 +604,7 @@
     }
 
     .bar-links a {
-      color: #ccc;
+      color: #bfdbfe;
       text-decoration: none;
       font-size: 14px;
     }
@@ -651,7 +616,7 @@
       left: 16px;
       width: 56px;
       height: 56px;
-      background: #25D366;
+      background: #1d4ed8;
       color: white;
       border-radius: 50%;
       display: flex;
@@ -659,29 +624,30 @@
       justify-content: center;
       font-size: 24px;
       text-decoration: none;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      box-shadow: 0 4px 20px rgba(29, 78, 216, 0.4);
       transition: all 0.3s ease;
       z-index: 50;
     }
 
     .wa-float:hover {
       transform: scale(1.05);
-      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+      box-shadow: 0 6px 25px rgba(29, 78, 216, 0.6);
+      background: #1e40af;
     }
 
-    /* Book Assessment floating button - Right corner */
+    /* Book Assessment floating button - Blue theme */
     .cta-float {
       position: fixed;
       bottom: 20px;
       right: 16px;
-      background: #4CAF50;
+      background: #1d4ed8;
       color: white;
       padding: 12px 16px;
       border-radius: 28px;
       text-decoration: none;
       font-weight: 600;
       font-size: 12px;
-      box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
+      box-shadow: 0 4px 20px rgba(29, 78, 216, 0.4);
       transition: all 0.3s ease;
       text-align: center;
       line-height: 1.3;
@@ -695,9 +661,9 @@
     }
 
     .cta-float:hover {
-      background: #45a049;
+      background: #1e40af;
       transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(76, 175, 80, 0.6);
+      box-shadow: 0 6px 25px rgba(29, 78, 216, 0.6);
     }
 
     /* Mobile responsiveness for floating buttons */
@@ -716,13 +682,7 @@
         max-width: 160px;
       }
       
-      .tutor-register-btn {
-        right: 12px;
-        font-size: 10px;
-        padding: 10px 14px;
-        top: 80px;
-        min-height: 40px;
-      }
+
     }
 
     @media (max-width: 320px) {
@@ -732,13 +692,7 @@
         max-width: 140px;
       }
       
-      .tutor-register-btn {
-        right: 8px;
-        font-size: 9px;
-        padding: 8px 12px;
-        top: 75px;
-        min-height: 36px;
-      }
+
     }
 
     /* Safe area for notched devices */
@@ -753,13 +707,10 @@
         right: max(16px, env(safe-area-inset-right));
       }
       
-      .tutor-register-btn {
-        right: max(2px, env(safe-area-inset-right));
-        top: 90px;
-      }
+
     }
 
-    /* Contact Modal - Mobile Optimized */
+    /* Contact Modal - Blue theme */
     .modal {
       position: fixed;
       top: 0;
@@ -767,7 +718,7 @@
       width: 100%;
       height: 100%;
       height: 100dvh; /* Dynamic viewport height */
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(30, 64, 175, 0.8);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       display: none;
@@ -795,6 +746,7 @@
       transform: scale(0.8) translateY(20px);
       opacity: 0;
       transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      border: 2px solid rgba(29, 78, 216, 0.1);
     }
 
     .modal.active .modal-card {
@@ -810,7 +762,7 @@
       border: none;
       font-size: 32px;
       cursor: pointer;
-      color: #666;
+      color: #6b7280;
       width: 44px; /* iOS minimum touch target */
       height: 44px;
       display: flex;
@@ -823,15 +775,15 @@
 
     .modal-close:hover,
     .modal-close:focus {
-      background: #f5f5f5;
-      color: #333;
+      background: #f3f4f6;
+      color: #1e40af;
     }
 
     .modal h3 {
       font-size: 26px;
       font-weight: 700;
       margin-bottom: 24px;
-      color: #333;
+      color: #1e40af;
       padding-right: 40px; /* Space for close button */
     }
 
@@ -843,7 +795,7 @@
       display: block;
       margin-bottom: 8px;
       font-weight: 600;
-      color: #333;
+      color: #1e40af;
       font-size: 16px;
     }
 
@@ -851,7 +803,7 @@
     .form-row textarea {
       width: 100%;
       padding: 16px 20px;
-      border: 2px solid #eee;
+      border: 2px solid #e5e7eb;
       border-radius: 12px;
       font-size: 16px; /* Prevents iOS zoom */
       font-family: inherit;
@@ -859,14 +811,15 @@
       background: #fafafa;
       -webkit-appearance: none;
       appearance: none;
+      color: #1e40af;
     }
 
     .form-row input:focus,
     .form-row textarea:focus {
       outline: none;
-      border-color: #4CAF50;
+      border-color: #1d4ed8;
       background: white;
-      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
     }
 
     .form-row textarea {
@@ -876,7 +829,7 @@
 
     .form-note {
       text-align: center;
-      color: #666;
+      color: #6b7280;
       font-size: 14px;
       margin-top: 15px;
       line-height: 1.5;
@@ -895,7 +848,7 @@
 
     /* Enhanced touch feedback */
     .btn, .chip, .card, .hamburger-menu {
-      -webkit-tap-highlight-color: rgba(76, 175, 80, 0.2);
+      -webkit-tap-highlight-color: rgba(29, 78, 216, 0.2);
       touch-action: manipulation;
       user-select: none;
       -webkit-user-select: none;
@@ -906,7 +859,7 @@
     .chip:focus,
     input:focus,
     textarea:focus {
-      outline: 2px solid #4CAF50;
+      outline: 2px solid #1d4ed8;
       outline-offset: 2px;
     }
 
@@ -925,210 +878,6 @@
     /* Smooth scrolling for the entire page */
     html {
       scroll-behavior: smooth;
-    }
-
-    /* Additional micro-breakpoints for ultra-small devices */
-    @media (max-width: 280px) {
-      .container {
-        padding: 0 8px;
-      }
-      
-      .brand-name {
-        font-size: 16px;
-      }
-      
-      .logo-circle {
-        width: 36px;
-        height: 36px;
-        font-size: 14px;
-      }
-      
-      .section-title {
-        font-size: 20px;
-      }
-      
-      .mobile-menu a {
-        font-size: 22px;
-        padding: 12px 24px;
-      }
-    }
-
-    /* Foldable phone optimization */
-    @media (max-width: 280px) and (max-height: 653px) {
-      .mobile-menu a {
-        margin: 8px 0;
-        font-size: 20px;
-      }
-    }
-
-    /* Large phone landscape */
-    @media (max-height: 500px) and (orientation: landscape) and (max-width: 900px) {
-      .mobile-menu {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-      }
-      
-      .mobile-menu a {
-        margin: 5px;
-        font-size: 18px;
-        padding: 10px 20px;
-      }
-      
-      .wa-float,
-      .cta-float {
-        bottom: 10px;
-      }
-      
-      .tutor-register-btn {
-        top: 20px;
-        transform: translateY(0);
-      }
-    }
-
-    /* Dark mode support */
-    @media (prefers-color-scheme: dark) {
-      .modal-card {
-        background: #1a1a1a;
-        color: #fff;
-      }
-      
-      .form-row input,
-      .form-row textarea {
-        background: #2a2a2a;
-        border-color: #444;
-        color: #fff;
-      }
-      
-      .form-row input:focus,
-      .form-row textarea:focus {
-        background: #333;
-        border-color: #4CAF50;
-      }
-    }
-
-    /* Reduced motion support */
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-      
-      html {
-        scroll-behavior: auto;
-      }
-    }
-    
-    /* Touch-friendly interactions */
-    .btn, .chip, .card {
-      -webkit-tap-highlight-color: rgba(76, 175, 80, 0.3);
-      touch-action: manipulation;
-    }
-
-    /* Improved touch targets */
-    .hamburger-menu {
-      min-width: 44px;
-      min-height: 44px;
-      padding: 6px;
-    }
-
-    .mobile-menu a {
-      min-height: 60px;
-      min-width: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Smoother scrolling */
-    .h-scroll {
-      scroll-behavior: smooth;
-      scrollbar-width: thin;
-      scrollbar-color: #4CAF50 #f1f1f1;
-    }
-
-    /* Better form inputs for mobile */
-    .form-row input,
-    .form-row textarea {
-      font-size: 16px; /* Prevents zoom on iOS */
-      -webkit-appearance: none;
-      -webkit-border-radius: 10px;
-    }
-
-    /* Prevent horizontal scroll */
-    body {
-      overflow-x: hidden;
-    }
-
-    /* Safe area for notched devices */
-    @supports (padding: max(0px)) {
-      .wa-float {
-        bottom: max(20px, env(safe-area-inset-bottom));
-        left: max(16px, env(safe-area-inset-left));
-      }
-      
-      .cta-float {
-        bottom: max(20px, env(safe-area-inset-bottom));
-        right: max(16px, env(safe-area-inset-right));
-      }
-      
-      .site-header {
-        padding-top: max(12px, env(safe-area-inset-top));
-      }
-    }
-
-    /* Additional mobile breakpoints */
-    @media (max-width: 480px) {
-      .container {
-        padding: 0 12px;
-      }
-      
-      .section-title {
-        font-size: 24px;
-      }
-      
-      .contact-card {
-        padding: 20px;
-      }
-      
-      .modal-card {
-        margin: 10px;
-        padding: 20px;
-      }
-    }
-
-    /* Very small screens */
-    @media (max-width: 360px) {
-      .brand-name {
-        font-size: 18px;
-      }
-      
-      .logo-circle {
-        width: 36px;
-        height: 36px;
-        font-size: 12px;
-      }
-      
-      .section-title {
-        font-size: 22px;
-      }
-    }
-
-    /* Landscape mobile optimization */
-    @media (max-height: 500px) and (orientation: landscape) {
-      .mobile-menu a {
-        margin: 10px 0;
-        font-size: 24px;
-      }
-      
-      .floating-actions {
-        bottom: 10px;
-      }
     }
 
     /* Hide tutor register button on desktop */
@@ -1151,9 +900,7 @@
         display: none;
       }
 
-      .tutor-register-btn {
-        display: none;
-      }
+
 
       .section-title {
         font-size: 36px;
@@ -1240,10 +987,7 @@
     </nav>
   </header>
 
-  <!-- Tutor Registration Button - Mobile Only (Right Side, below hamburger menu) -->
-  <a class="tutor-register-btn" href="https://forms.gle/wxgSqXpHgAgKTKBQ7" target="_blank" rel="noopener" aria-label="Register as a Tutor">
-    REGISTER AS A TUTOR
-  </a>
+
 
   <!-- Reviews: horizontal scroll -->
   <section class="container">
@@ -1360,7 +1104,6 @@
           </div>
 
           <div class="quick-actions">
-           
             <a class="btn btn-outline" href="tel:+917207467565">Call Now</a>
             <a class="btn btn-outline" href="mailto:hello@iituitions.com">Email Us</a>
           </div>
@@ -1381,7 +1124,7 @@
       <div class="col brand-col">
         <div class="brand-head"><span class="brand-logo" aria-hidden="true">📘</span><span class="brand-name">IITuitions</span></div>
         <p class="brand-copy">Helping students achieve <strong>1500+ SAT</strong> scores and gain admission to top universities — and helping IIT aspirants convert effort into ranks — since 2010.</p>
-        <div class="socials"><a href="#" aria-label="Instagram" style="color: #4CAF50; font-size: 18px;">📷 Instagram</a></div>
+        <div class="socials"><a href="#" aria-label="Instagram" style="color: #dbeafe; font-size: 18px;">📷 Instagram</a></div>
       </div>
 
       <div class="col">
@@ -1433,7 +1176,11 @@
 
   <!-- Floating action buttons -->
   <a class="wa-float" href="https://wa.me/917207467565?text=Hi%20IITuitions%2C%20I%27d%20like%20course%20details"
-     target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+     target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488"/>
+     </svg>
+  </a>
   
   <a class="cta-float" href="https://wa.me/917207467565?text=Hi%20IITuitions%2C%20book%20my%20free%20assessment"
      target="_blank" rel="noopener">
