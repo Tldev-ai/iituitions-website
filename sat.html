@@ -23,8 +23,8 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       line-height: 1.6;
-      color: #333;
-      background: #fff;
+      color: #1e40af; /* Blue 700 for main text */
+      background: #ffffff; /* Pure white background */
       overflow-x: hidden; /* Prevent horizontal scroll */
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -40,20 +40,20 @@
 
     /* Mobile-first header with enhanced optimization */
     .site-header {
-      background: #fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(30, 64, 175, 0.1);
       position: sticky;
       top: 0;
       z-index: 100;
       padding: 16px 0;
       width: 100%;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      border-bottom: 2px solid rgba(30, 64, 175, 0.1);
     }
 
     .header-row {
       display: flex;
       align-items: center;
-      justify-content: space-between; /* Space between hamburger and contact button */
+      justify-content: flex-end; /* Hamburger menu on the right */
       min-height: 44px; /* iOS minimum touch target */
       position: relative;
     }
@@ -62,73 +62,70 @@
     .hamburger-menu {
       background: none;
       border: none;
-      width: 32px;
-      height: 32px;
+      width: 44px;
+      height: 44px;
       cursor: pointer;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 4px;
-      padding: 0;
-      z-index: 250;
+      align-items: center;
+      gap: 5px;
+      padding: 8px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      -webkit-tap-highlight-color: rgba(29, 78, 216, 0.2);
       position: relative;
+      z-index: 101;
+    }
+
+    .hamburger-menu:active {
+      background-color: rgba(29, 78, 216, 0.1);
     }
 
     .hamburger-menu span {
-      width: 24px;
+      width: 28px;
       height: 3px;
-      background: #333;
+      background: #1e40af;
       border-radius: 2px;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transform-origin: center;
+      display: block;
     }
 
     .hamburger-menu.active span:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 6px);
+      transform: rotate(45deg) translate(7px, 7px);
+      background: #1d4ed8;
     }
 
     .hamburger-menu.active span:nth-child(2) {
       opacity: 0;
+      transform: scale(0);
     }
 
     .hamburger-menu.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
+      transform: rotate(-45deg) translate(7px, -7px);
+      background: #1d4ed8;
     }
 
-    /* Mobile menu overlay - Updated for dropdown style */
-    .mobile-menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: transparent;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 150;
-    }
-
-    .mobile-menu-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
+    /* Mobile menu dropdown - styled like image */
     .mobile-menu {
       position: absolute;
-      top: 70px;
-      left: 16px;
-      width: 200px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-      border: 1px solid #e0e0e0;
+      top: 100%;
+      right: 0;
+      width: 280px;
+      background: #ffffff;
+      border: 1px solid rgba(30, 64, 175, 0.15);
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(30, 64, 175, 0.15);
       opacity: 0;
       visibility: hidden;
       transform: translateY(-10px);
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       z-index: 200;
+      margin-top: 8px;
       overflow: hidden;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .mobile-menu.active {
@@ -138,31 +135,47 @@
     }
 
     .mobile-menu a {
-      color: #333;
+      color: #374151;
       text-decoration: none;
       font-size: 16px;
-      font-weight: 500;
-      padding: 16px 20px;
-      border-bottom: 1px solid #f0f0f0;
-      transition: all 0.2s ease;
+      font-weight: 600;
+      padding: 18px 24px;
+      border-bottom: 1px solid rgba(30, 64, 175, 0.08);
+      transition: all 0.3s ease;
       display: flex;
       align-items: center;
       gap: 12px;
-      background: #fff;
-    }
-
-    .mobile-menu a:hover {
-      background: #f8f9fa;
-      color: #4CAF50;
+      min-height: 60px;
+      -webkit-tap-highlight-color: rgba(29, 78, 216, 0.1);
     }
 
     .mobile-menu a:last-child {
       border-bottom: none;
     }
 
+    .mobile-menu a:hover,
+    .mobile-menu a:active {
+      background: rgba(29, 78, 216, 0.05);
+      color: #1d4ed8;
+      transform: translateX(4px);
+    }
+
+    .mobile-menu a:first-child {
+      border-radius: 20px 20px 0 0;
+    }
+
+    .mobile-menu a:last-child {
+      border-radius: 0 0 20px 20px;
+    }
+
+    /* Desktop nav (hidden on mobile) */
+    .nav-actions {
+      display: none;
+    }
+
     /* Enhanced mobile-optimized buttons */
     .btn {
-      background: #4CAF50;
+      background: #1d4ed8;
       color: white;
       border: none;
       padding: 14px 24px;
@@ -178,7 +191,7 @@
       text-align: center;
       min-height: 44px; /* iOS minimum touch target */
       min-width: 44px;
-      -webkit-tap-highlight-color: rgba(76, 175, 80, 0.3);
+      -webkit-tap-highlight-color: rgba(29, 78, 216, 0.3);
       touch-action: manipulation;
       user-select: none;
       -webkit-user-select: none;
@@ -186,9 +199,9 @@
 
     .btn:hover,
     .btn:focus {
-      background: #45a049;
+      background: #1e40af;
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+      box-shadow: 0 4px 15px rgba(29, 78, 216, 0.3);
     }
 
     .btn:active {
@@ -197,18 +210,18 @@
     }
 
     .btn-primary {
-      background: #4CAF50;
+      background: #1d4ed8;
     }
 
     .btn-outline {
       background: transparent;
-      color: #4CAF50;
-      border: 2px solid #4CAF50;
+      color: #1d4ed8;
+      border: 2px solid #1d4ed8;
     }
 
     .btn-outline:hover,
     .btn-outline:focus {
-      background: #4CAF50;
+      background: #1d4ed8;
       color: white;
     }
 
@@ -216,7 +229,7 @@
     .page-hero {
       text-align: center;
       padding: 40px 16px 60px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
       color: white;
     }
 
@@ -240,12 +253,12 @@
       font-weight: 700;
       text-align: center;
       margin: 40px 0 30px;
-      color: #333;
+      color: #1e40af;
     }
 
     /* Why hero section */
     .why-hero {
-      background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
       color: white;
       padding: 60px 0;
       margin: 60px 0;
@@ -273,12 +286,12 @@
     }
 
     .h-scroll::-webkit-scrollbar-track {
-      background: #f1f1f1;
+      background: rgba(29, 78, 216, 0.1);
       border-radius: 4px;
     }
 
     .h-scroll::-webkit-scrollbar-thumb {
-      background: #888;
+      background: #1d4ed8;
       border-radius: 4px;
     }
 
@@ -287,14 +300,16 @@
       background: white;
       border-radius: 16px;
       padding: 24px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(30, 64, 175, 0.1);
       min-width: 280px;
       scroll-snap-align: start;
       transition: transform 0.3s ease;
+      border: 1px solid rgba(30, 64, 175, 0.1);
     }
 
     .card:hover {
       transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(30, 64, 175, 0.15);
     }
 
     .story-card .card-profile {
@@ -320,13 +335,13 @@
 
     .quote {
       font-style: italic;
-      color: #666;
+      color: #374151;
       margin-bottom: 12px;
       font-size: 16px;
     }
 
     .muted {
-      color: #888;
+      color: #6b7280;
       font-size: 14px;
     }
 
@@ -338,7 +353,7 @@
 
     .stars::before {
       content: "⭐⭐⭐⭐⭐";
-      color: #ffc107;
+      color: #f59e0b;
     }
 
     /* Review cards */
@@ -350,7 +365,7 @@
       font-size: 18px;
       font-weight: 600;
       margin-bottom: 8px;
-      color: #333;
+      color: #1e40af;
     }
 
     /* Video wrapper */
@@ -362,7 +377,7 @@
       margin: 30px 0;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 30px rgba(30, 64, 175, 0.2);
     }
 
     .video-wrap iframe {
@@ -376,7 +391,7 @@
 
     /* Footer */
     .footer-pro {
-      background: #333;
+      background: #1e40af;
       color: white;
       margin-top: 80px;
     }
@@ -402,10 +417,11 @@
     .brand-name {
       font-size: 24px;
       font-weight: 700;
+      color: white;
     }
 
     .brand-copy {
-      color: #ccc;
+      color: #bfdbfe;
       margin-bottom: 20px;
       line-height: 1.6;
     }
@@ -414,7 +430,7 @@
       font-size: 18px;
       font-weight: 600;
       margin-bottom: 16px;
-      color: #4CAF50;
+      color: #dbeafe;
     }
 
     .foot-links {
@@ -426,13 +442,13 @@
     }
 
     .foot-links a, .foot-contacts a {
-      color: #ccc;
+      color: #bfdbfe;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     .foot-links a:hover, .foot-contacts a:hover {
-      color: #4CAF50;
+      color: white;
     }
 
     .foot-contacts {
@@ -452,10 +468,10 @@
     }
 
     .footer-bar {
-      background: #222;
+      background: #1e3a8a;
       padding: 20px 16px;
       text-align: center;
-      border-top: 1px solid #444;
+      border-top: 1px solid #3b82f6;
     }
 
     .bar-grid {
@@ -473,19 +489,19 @@
     }
 
     .bar-links a {
-      color: #ccc;
+      color: #bfdbfe;
       text-decoration: none;
       font-size: 14px;
     }
 
-    /* Floating action buttons */
+    /* Floating action buttons - Blue theme */
     .wa-float {
       position: fixed;
       bottom: 20px;
       left: 20px;
       width: 56px;
       height: 56px;
-      background: #25D366;
+      background: #1d4ed8;
       color: white;
       border-radius: 50%;
       display: flex;
@@ -493,28 +509,29 @@
       justify-content: center;
       font-size: 24px;
       text-decoration: none;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      box-shadow: 0 4px 20px rgba(29, 78, 216, 0.4);
       z-index: 50;
       transition: all 0.3s ease;
     }
 
     .wa-float:hover {
       transform: scale(1.1);
-      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+      box-shadow: 0 6px 25px rgba(29, 78, 216, 0.6);
+      background: #1e40af;
     }
 
     .cta-float-right {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #4CAF50;
+      background: #1d4ed8;
       color: white;
       padding: 16px 24px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
       font-size: 14px;
-      box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
+      box-shadow: 0 4px 20px rgba(29, 78, 216, 0.4);
       z-index: 50;
       transition: all 0.3s ease;
       max-width: 200px;
@@ -523,9 +540,9 @@
     }
 
     .cta-float-right:hover {
-      background: #45a049;
+      background: #1e40af;
       transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(76, 175, 80, 0.6);
+      box-shadow: 0 6px 25px rgba(29, 78, 216, 0.6);
     }
 
     /* Steps container styling */
@@ -540,26 +557,27 @@
       background: white;
       border-radius: 16px;
       padding: 30px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      border-left: 5px solid #4CAF50;
+      box-shadow: 0 4px 20px rgba(30, 64, 175, 0.1);
+      border-left: 5px solid #1d4ed8;
       transition: transform 0.3s ease;
+      border: 1px solid rgba(30, 64, 175, 0.1);
     }
 
     .step-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 30px rgba(30, 64, 175, 0.15);
     }
 
     .step-title {
       font-size: 24px;
       font-weight: 700;
-      color: #4CAF50;
+      color: #1d4ed8;
       margin-bottom: 12px;
     }
 
     .step-description {
       font-size: 16px;
-      color: #666;
+      color: #374151;
       margin-bottom: 20px;
       line-height: 1.6;
     }
@@ -573,7 +591,7 @@
       position: relative;
       padding-left: 25px;
       margin-bottom: 10px;
-      color: #333;
+      color: #374151;
       line-height: 1.5;
     }
 
@@ -581,7 +599,7 @@
       content: "✓";
       position: absolute;
       left: 0;
-      color: #4CAF50;
+      color: #1d4ed8;
       font-weight: bold;
       font-size: 16px;
     }
@@ -627,12 +645,8 @@
         justify-content: space-between; /* Desktop layout */
       }
 
-      /* Hide hamburger and mobile contact, show desktop nav */
+      /* Hide hamburger and show desktop nav */
       .hamburger-menu {
-        display: none !important;
-      }
-
-      .mobile-contact {
         display: none !important;
       }
 
@@ -643,10 +657,6 @@
       }
 
       .mobile-menu {
-        display: none;
-      }
-
-      .mobile-menu-overlay {
         display: none;
       }
     }
@@ -670,26 +680,30 @@
   <!-- Top bar -->
   <header class="site-header">
     <div class="container header-row">
-      <div class="hamburger-container" style="position: relative;">
+      <div style="position: relative;">
         <button class="hamburger-menu" id="hamburgerBtn">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <!-- Mobile menu overlay -->
-        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
         <!-- Mobile menu dropdown -->
         <nav class="mobile-menu" id="mobileMenu">
           <a href="index.html">🏠 Home</a>
           <a href="iit.html">🎓 IIT</a>
           <a href="sat.html">📚 SAT</a>
           <a href="institutions.html">🏛️ Tuitions</a>
-          <a href="#contact">📞 Contact Us</a>
         </nav>
       </div>
-      <div class="nav-actions">
+
+      <!-- Desktop nav (hidden on mobile) -->
+      <nav class="nav-actions">
+        <a class="btn btn-outline" href="index.html">Home</a>
+        <a class="btn btn-outline" href="iit.html">IIT</a>
+        <a class="btn btn-outline" href="sat.html">SAT</a>
+        <a class="btn btn-outline" href="institutions.html">Tuitions</a>
         <button class="btn btn-primary" onclick="document.getElementById('bookCTA').click()">Contact Us</button>
-      </div>
+      </nav>
     </div>
   </header>
 
@@ -707,7 +721,7 @@
     <div class="h-scroll snap-x" aria-label="IIT success stories">
       <article class="card story-card">
         <div class="card-profile">
-          <div class="avatar"><div style="background: #4CAF50; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">R</div></div>
+          <div class="avatar"><div style="background: #1d4ed8; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">R</div></div>
           <div><strong>Rohit — AIR 23</strong><div class="muted">IIT Bombay (CSE)</div></div>
         </div>
         <p class="quote">"Daily review calls and doubt clinics kept me razor sharp."</p>
@@ -716,7 +730,7 @@
 
       <article class="card story-card">
         <div class="card-profile">
-          <div class="avatar"><div style="background: #FF9800; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">A</div></div>
+          <div class="avatar"><div style="background: #3b82f6; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">A</div></div>
           <div><strong>Ananya — AIR 55</strong><div class="muted">IIT Delhi (EE)</div></div>
         </div>
         <p class="quote">"Targeted practice on every weak topic."</p>
@@ -725,7 +739,7 @@
 
       <article class="card story-card">
         <div class="card-profile">
-          <div class="avatar"><div style="background: #2196F3; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">R</div></div>
+          <div class="avatar"><div style="background: #1e40af; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">R</div></div>
           <div><strong>Rahul — AIR 120</strong><div class="muted">IIT Madras (ME)</div></div>
         </div>
         <p class="quote">"Mocks felt like the real exam."</p>
@@ -734,7 +748,7 @@
 
       <article class="card story-card">
         <div class="card-profile">
-          <div class="avatar"><div style="background: #9C27B0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">M</div></div>
+          <div class="avatar"><div style="background: #2563eb; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">M</div></div>
           <div><strong>Meera — AIR 210</strong><div class="muted">IIT Kanpur (CE)</div></div>
         </div>
         <p class="quote">"Concept clarity + drills boosted my rank quickly."</p>
@@ -845,7 +859,7 @@
       <div class="col brand-col">
         <div class="brand-head"><span class="brand-logo">📘</span><span class="brand-name">IITuitions</span></div>
         <p class="brand-copy">Helping students achieve <strong>IIT ranks</strong> and gain admission to top engineering colleges — with precision diagnostics, elite mentorship, and proven results — since 2010.</p>
-        <div class="socials"><a href="#" aria-label="Instagram" class="social-btn" style="color: #4CAF50; font-size: 20px;">📷</a></div>
+        <div class="socials"><a href="#" aria-label="Instagram" class="social-btn" style="color: #dbeafe; font-size: 20px;">📷</a></div>
       </div>
       <div class="col">
         <h4 class="foot-title">Quick Links</h4>
@@ -895,7 +909,11 @@
   <!-- Floating actions -->
   <a class="wa-float"
      href="https://wa.me/917207467565?text=Hi%20IITuitions%2C%20I%20want%20a%20free%20assessment"
-     target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+     target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488"/>
+     </svg>
+  </a>
 
   <a id="bookCTA" class="cta-float-right"
      href="https://wa.me/917207467565?text=Hi%20IITuitions%2C%20book%20my%20free%20assessment"
@@ -907,25 +925,34 @@
     // Mobile menu functionality
     function toggleMobileMenu() {
       const menu = document.getElementById('mobileMenu');
-      const overlay = document.getElementById('mobileMenuOverlay');
       const hamburger = document.getElementById('hamburgerBtn');
       
-      if (menu && hamburger && overlay) {
+      if (menu && hamburger) {
         menu.classList.toggle('active');
-        overlay.classList.toggle('active');
         hamburger.classList.toggle('active');
       }
     }
 
-    // Close menu when clicking on a link or overlay
+    // Close menu when clicking on a link
     function closeMenu() {
       const menu = document.getElementById('mobileMenu');
-      const overlay = document.getElementById('mobileMenuOverlay');
       const btn = document.getElementById('hamburgerBtn');
       
-      if (menu && btn && overlay) {
+      if (menu && btn) {
         menu.classList.remove('active');
-        overlay.classList.remove('active');
+        btn.classList.remove('active');
+      }
+    }
+
+    // Close menu when clicking outside (mobile only)
+    function closeMenuOnOutsideClick(e) {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.getElementById('hamburgerBtn');
+      
+      if (window.innerWidth < 768 && menu && btn && 
+          !menu.contains(e.target) && !btn.contains(e.target) && 
+          menu.classList.contains('active')) {
+        menu.classList.remove('active');
         btn.classList.remove('active');
       }
     }
@@ -938,17 +965,14 @@
         hamburgerBtn.addEventListener('click', toggleMobileMenu);
       }
       
-      // Add click event to overlay to close menu
-      const overlay = document.getElementById('mobileMenuOverlay');
-      if (overlay) {
-        overlay.addEventListener('click', closeMenu);
-      }
-      
       // Add click events to menu links
       const menuLinks = document.querySelectorAll('#mobileMenu a');
       menuLinks.forEach(link => {
         link.addEventListener('click', closeMenu);
       });
+      
+      // Add outside click listener
+      document.addEventListener('click', closeMenuOnOutsideClick);
       
       // Update year in footer
       const yearElement = document.getElementById('yr');
