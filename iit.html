@@ -2,2224 +2,494 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>Transform Your Child's IIT Dreams into Reality - IITuitions</title>
-  <meta name="description" content="Personal mentorship from IIT toppers. 500+ students in IITs. Only 50 students selected annually. Book free assessment now.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IITuitions Mobile Preview</title>
   <style>
-    /* Mobile-First CSS Variables */
-    :root {
-      --primary-color: #000000;
-      --primary-dark: #1a1a1a;
-      --primary-light: #333333;
-      --text-primary: #000000;
-      --text-secondary: #333333;
-      --text-muted: #666666;
-      --bg-primary: #ffffff;
-      --bg-secondary: #f9f9f9;
-      --bg-accent: linear-gradient(135deg, #000000 0%, #333333 100%);
-      --shadow-light: rgba(0, 0, 0, 0.1);
-      --shadow-medium: rgba(0, 0, 0, 0.15);
-      --success-color: #000000;
-      --warning-color: #000000;
-      --whatsapp-color: #25D366;
-    }
-
-    /* Reset and base styles - Mobile First */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      font-size: 16px;
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--text-primary);
-      background: var(--bg-primary);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      touch-action: manipulation;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+      color: #333;
     }
 
-    /* Mobile container */
-    .container {
+    .preview-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 12px;
-      width: 100%;
     }
 
-    /* Mobile header */
-    .site-header {
-      background: var(--bg-primary);
-      box-shadow: 0 2px 10px var(--shadow-light);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 12px 0;
-      width: 100%;
-      border-bottom: 2px solid var(--shadow-light);
+    .preview-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #000;
     }
 
-    .header-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 44px;
+    .phone-mockups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .phone-mockup {
+      background: #000;
+      border-radius: 30px;
+      padding: 15px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      position: relative;
+      max-width: 375px;
+      margin: 0 auto;
+    }
+
+    .phone-screen {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 667px;
       position: relative;
     }
 
-    .logo {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--primary-color);
-      text-decoration: none;
+    .status-bar {
+      background: #000;
+      height: 44px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 8px;
+      padding: 0 20px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
     }
 
-    /* Enhanced mobile hamburger menu */
-    .hamburger-menu {
-      background: none;
-      border: none;
-      width: 44px;
-      height: 44px;
-      cursor: pointer;
+    .mockup-header {
+      background: #fff;
+      padding: 12px 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .mockup-logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .mockup-hamburger {
+      width: 36px;
+      height: 36px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 4px;
-      padding: 8px;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-      position: relative;
-      z-index: 101;
+      border: none;
+      background: none;
+      cursor: pointer;
+      border-radius: 6px;
+      padding: 6px;
     }
 
-    .hamburger-menu:active {
-      background-color: rgba(0, 0, 0, 0.1);
+    .mockup-hamburger span {
+      width: 20px;
+      height: 2px;
+      background: #000;
+      border-radius: 1px;
+      transition: all 0.3s ease;
     }
 
-    .hamburger-menu span {
-      width: 24px;
-      height: 3px;
-      background: var(--text-primary);
-      border-radius: 2px;
-      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transform-origin: center;
-      display: block;
+    .mockup-hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
     }
 
-    .hamburger-menu.active span:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 6px);
-      background: var(--primary-color);
-    }
-
-    .hamburger-menu.active span:nth-child(2) {
+    .mockup-hamburger.active span:nth-child(2) {
       opacity: 0;
-      transform: scale(0);
     }
 
-    .hamburger-menu.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-      background: var(--primary-color);
+    .mockup-hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* Mobile menu dropdown */
-    .mobile-menu {
+    .mockup-menu {
       position: absolute;
       top: 100%;
-      right: 0;
-      width: 280px;
-      background: var(--bg-primary);
-      border: 1px solid var(--shadow-light);
-      border-radius: 16px;
-      box-shadow: 0 10px 40px var(--shadow-medium);
+      right: 16px;
+      width: 240px;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
       opacity: 0;
       visibility: hidden;
       transform: translateY(-10px);
-      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      z-index: 200;
-      margin-top: 8px;
+      transition: all 0.3s ease;
+      z-index: 1000;
       overflow: hidden;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
     }
 
-    .mobile-menu.active {
+    .mockup-menu.active {
       opacity: 1;
       visibility: visible;
-      transform: translateY(0);
+      transform: translateY(8px);
     }
 
-    .mobile-menu a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 600;
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--shadow-light);
-      transition: all 0.3s ease;
+    .mockup-menu a {
       display: flex;
       align-items: center;
       gap: 12px;
-      min-height: 56px;
-      -webkit-tap-highlight-color: var(--shadow-light);
+      padding: 14px 18px;
+      color: #333;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      border-bottom: 1px solid #f0f0f0;
+      transition: all 0.3s ease;
     }
 
-    .mobile-menu a:last-child {
+    .mockup-menu a:last-child {
       border-bottom: none;
     }
 
-    .mobile-menu a:hover,
-    .mobile-menu a:active {
-      background: rgba(0, 0, 0, 0.05);
-      color: var(--primary-color);
+    .mockup-menu a:hover {
+      background: rgba(0,0,0,0.05);
+      color: #000;
       transform: translateX(4px);
     }
 
-    /* Desktop nav (hidden on mobile) */
-    .nav-actions {
-      display: none;
-    }
-
-    /* Mobile-optimized buttons */
-    .btn {
-      background: var(--primary-color);
+    .mockup-content {
+      flex: 1;
+      background: linear-gradient(135deg, #000 0%, #333 100%);
       color: white;
-      border: none;
-      padding: 14px 20px;
-      border-radius: 25px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      font-size: 15px;
-      text-align: center;
-      min-height: 48px;
-      -webkit-tap-highlight-color: var(--shadow-medium);
-      touch-action: manipulation;
-      user-select: none;
-      -webkit-user-select: none;
-    }
-
-    .btn:hover,
-    .btn:focus {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 15px var(--shadow-medium);
-    }
-
-    .btn:active {
-      transform: translateY(0);
-      transition: transform 0.1s ease;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--primary-color);
-      border: 2px solid var(--primary-color);
-    }
-
-    .btn-outline:hover,
-    .btn-outline:focus {
-      background: var(--primary-color);
-      color: white;
-    }
-
-    /* Hero Section - Mobile Optimized */
-    .hero-section {
-      background: var(--bg-accent);
-      color: white;
-      padding: 40px 12px 50px;
+      padding: 30px 20px;
       text-align: center;
       position: relative;
-      overflow: hidden;
+      overflow-y: auto;
     }
 
-    .hero-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)" /></svg>') repeat;
-      opacity: 0.3;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero-stats {
+    .hero-badges {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 8px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
-    .stat-badge {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      padding: 8px 12px;
-      border-radius: 16px;
-      font-size: 12px;
+    .badge {
+      background: rgba(255,255,255,0.15);
+      padding: 6px 10px;
+      border-radius: 12px;
+      font-size: 11px;
       font-weight: 600;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      text-align: center;
+      border: 1px solid rgba(255,255,255,0.2);
     }
 
     .hero-title {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 800;
       line-height: 1.2;
-      margin-bottom: 16px;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      margin-bottom: 12px;
     }
 
     .hero-subtitle {
-      font-size: 16px;
-      opacity: 0.95;
-      margin-bottom: 24px;
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 20px;
       line-height: 1.4;
     }
 
-    .hero-ctas {
+    .cta-buttons {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 24px;
+      gap: 10px;
+      margin-bottom: 16px;
     }
 
-    .btn-hero-primary {
-      background: white;
-      color: var(--primary-color);
-      font-weight: 700;
-      padding: 16px 24px;
-      font-size: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 350px;
-      margin: 0 auto;
+    .cta-btn {
+      padding: 12px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      text-align: center;
+      transition: transform 0.2s ease;
     }
 
-    .btn-hero-secondary {
+    .cta-primary {
+      background: #fff;
+      color: #000;
+    }
+
+    .cta-secondary {
       background: transparent;
-      color: white;
-      border: 2px solid white;
-      font-weight: 600;
-      padding: 14px 24px;
-      font-size: 15px;
-      width: 100%;
-      max-width: 300px;
-      margin: 0 auto;
+      color: #fff;
+      border: 2px solid #fff;
     }
 
-    .hero-guarantee {
-      background: rgba(0, 0, 0, 0.1);
-      color: #333333;
-      padding: 12px 16px;
-      border-radius: 20px;
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 600;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      max-width: 90%;
-      line-height: 1.3;
-    }
-
-    /* Trust Indicators */
-    .trust-section {
-      background: var(--bg-secondary);
-      padding: 40px 12px;
-      text-align: center;
-    }
-
-    .trust-stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .trust-stat {
-      background: white;
-      padding: 24px 16px;
+    .guarantee {
+      background: rgba(0,0,0,0.1);
+      color: #ccc;
+      padding: 8px 12px;
       border-radius: 16px;
-      box-shadow: 0 4px 20px var(--shadow-light);
-      border: 1px solid var(--shadow-light);
-      transition: transform 0.3s ease;
-    }
-
-    .trust-stat:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px var(--shadow-medium);
-    }
-
-    .trust-number {
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--primary-color);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
-    .trust-label {
-      font-size: 14px;
-      color: var(--text-secondary);
-      font-weight: 600;
-    }
-
-    /* Success Stories - Mobile Optimized */
-    .success-section {
-      padding: 50px 12px;
-      background: var(--bg-primary);
-    }
-
-    .section-title {
-      font-size: 28px;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 20px;
-      color: var(--text-primary);
-    }
-
-    .section-subtitle {
-      text-align: center;
-      font-size: 16px;
-      color: var(--text-muted);
-      margin-bottom: 30px;
-      line-height: 1.5;
-    }
-
-    .success-grid {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding: 20px 0 30px 0;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      margin-bottom: 20px;
-    }
-
-    .success-grid::-webkit-scrollbar {
-      display: none;
-    }
-
-    .success-card {
-      background: white;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 6px 25px var(--shadow-light);
-      border: 1px solid var(--shadow-light);
-      position: relative;
-      transition: all 0.3s ease;
-      min-width: 280px;
-      max-width: 320px;
-      scroll-snap-align: start;
-      flex-shrink: 0;
-    }
-
-    .success-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px var(--shadow-medium);
-    }
-
-    .success-rank {
-      position: absolute;
-      top: -12px;
-      right: 16px;
-      background: var(--primary-color);
-      color: white;
-      padding: 6px 16px;
-      border-radius: 16px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .student-profile {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .student-avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: var(--bg-accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: 700;
-      color: white;
-    }
-
-    .student-info h3 {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 4px;
-    }
-
-    .student-college {
-      color: var(--text-muted);
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .success-quote {
-      font-style: italic;
-      font-size: 14px;
-      line-height: 1.5;
-      color: var(--text-secondary);
-      margin-bottom: 16px;
-      position: relative;
-      padding-left: 12px;
-    }
-
-    .success-quote::before {
-      content: '"';
-      font-size: 32px;
-      color: var(--primary-light);
-      position: absolute;
-      top: -8px;
-      left: -8px;
-      font-family: serif;
-    }
-
-    .improvement-stats {
-      display: flex;
-      gap: 12px;
-      justify-content: space-between;
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid var(--shadow-light);
-    }
-
-    .improvement-stat {
-      text-align: center;
-      flex: 1;
-    }
-
-    .improvement-number {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--primary-color);
-    }
-
-    .improvement-label {
       font-size: 11px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-
-    /* Why Choose Us - Mobile Optimized */
-    .why-section {
-      background: var(--bg-accent);
-      color: white;
-      padding: 50px 12px;
-      position: relative;
-    }
-
-    .why-content {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .why-title {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-
-    .why-subtitle {
-      font-size: 16px;
-      margin-bottom: 30px;
-      opacity: 0.95;
-      line-height: 1.5;
-    }
-
-    .problems-solutions {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      margin-top: 30px;
-    }
-
-    .problem-solution-card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      padding: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .problem {
-      color: #fca5a5;
-      margin-bottom: 16px;
-    }
-
-    .solution {
-      color: #a7f3d0;
-    }
-
-    .problem h4, .solution h4 {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .problem p, .solution p {
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    /* Faculty Section - Mobile Optimized */
-    .faculty-section {
-      padding: 50px 12px;
-      background: var(--bg-secondary);
-    }
-
-    .faculty-intro {
-      text-align: center;
-      margin: 0 auto 30px;
-    }
-
-    .faculty-credentials {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding: 20px 0 30px 0;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      margin-bottom: 30px;
-    }
-
-    .faculty-credentials::-webkit-scrollbar {
-      display: none;
-    }
-
-    .credential-card {
-      background: white;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px var(--shadow-light);
-      text-align: center;
-      border: 1px solid var(--shadow-light);
-      transition: transform 0.3s ease;
-      min-width: 240px;
-      max-width: 280px;
-      scroll-snap-align: start;
-      flex-shrink: 0;
-    }
-
-    .credential-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px var(--shadow-medium);
-    }
-
-    .credential-icon {
-      font-size: 40px;
-      margin-bottom: 12px;
-    }
-
-    .credential-title {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 8px;
-    }
-
-    .credential-desc {
-      color: var(--text-secondary);
-      line-height: 1.4;
-      font-size: 14px;
-    }
-
-    /* Parent Reviews Section - Mobile */
-    .reviews-section {
-      padding: 50px 12px;
-      background: var(--bg-secondary);
-    }
-
-    .reviews-grid {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding: 20px 0 30px 0;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      margin-bottom: 20px;
-    }
-
-    .reviews-grid::-webkit-scrollbar {
-      display: none;
-    }
-
-    .review-card {
-      background: white;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 6px 25px var(--shadow-light);
-      border: 1px solid var(--shadow-light);
-      position: relative;
-      transition: all 0.3s ease;
-      min-width: 280px;
-      max-width: 320px;
-      scroll-snap-align: start;
-      flex-shrink: 0;
-      text-align: center;
-    }
-
-    .review-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px var(--shadow-medium);
-    }
-
-    .reviewer-profile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-
-    .reviewer-avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: var(--bg-accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 8px;
-    }
-
-    .reviewer-name {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 4px;
-    }
-
-    .reviewer-relation {
-      color: var(--text-muted);
-      font-size: 13px;
       font-weight: 600;
+      border: 1px solid rgba(0,0,0,0.2);
+      margin-top: 10px;
     }
 
-    .review-stars {
-      display: flex;
-      justify-content: center;
-      gap: 2px;
-      margin-bottom: 12px;
-    }
-
-    .star {
-      color: #000000;
-      font-size: 16px;
-    }
-
-    .review-quote {
-      font-style: italic;
-      font-size: 14px;
-      line-height: 1.5;
-      color: var(--text-secondary);
-      position: relative;
-      padding-left: 12px;
-    }
-
-    .review-quote::before {
-      content: '"';
-      font-size: 32px;
-      color: var(--primary-light);
-      position: absolute;
-      top: -8px;
-      left: -8px;
-      font-family: serif;
-    }
-
-    /* Guarantees Section - Mobile */
-    .guarantees-section {
-      background: var(--bg-primary);
-      padding: 50px 12px;
-    }
-
-    .guarantees-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .guarantee-card {
-      background: white;
-      border: 2px solid var(--primary-color);
-      border-radius: 16px;
-      padding: 24px;
+    .state-label {
       text-align: center;
-      position: relative;
-    }
-
-    .guarantee-badge {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--primary-color);
-      color: white;
-      padding: 6px 16px;
-      border-radius: 16px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .guarantee-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin: 16px 0 12px;
-    }
-
-    .guarantee-desc {
-      color: var(--text-secondary);
-      line-height: 1.5;
-      font-size: 14px;
-    }
-
-    /* CTA Section - Mobile */
-    .cta-section {
-      background: var(--bg-accent);
-      color: white;
-      padding: 50px 12px;
-      text-align: center;
-    }
-
-    .cta-content {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .cta-title {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-
-    .cta-subtitle {
       font-size: 16px;
-      margin-bottom: 24px;
-      opacity: 0.95;
-    }
-
-    .urgency-text {
-      background: rgba(0, 0, 0, 0.1);
-      color: #333333;
-      padding: 12px 16px;
-      border-radius: 20px;
-      display: inline-block;
-      font-size: 13px;
       font-weight: 600;
-      margin-bottom: 24px;
-      border: 1px solid rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+      color: #000;
     }
 
-    /* Comparison Section - Mobile */
-    .comparison-section {
-      padding: 50px 12px;
-      background: var(--bg-secondary);
+    .closed-state {
+      border: 3px solid #4CAF50;
     }
 
-    .comparison-container {
-      max-width: 800px;
-      margin: 0 auto;
+    .open-state {
+      border: 3px solid #2196F3;
     }
 
-    .vs-header {
-      text-align: center;
+    .description {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       margin-bottom: 30px;
     }
 
-    .vs-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    .vs-card {
+    .features-list {
       background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 6px 25px var(--shadow-light);
-      border: 1px solid var(--shadow-light);
-    }
-
-    .vs-header-bar {
-      padding: 16px;
-      font-weight: 700;
-      text-align: center;
-      color: white;
-      font-size: 16px;
-    }
-
-    .vs-traditional {
-      background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
-    }
-
-    .vs-iituitions {
-      background: var(--bg-accent);
-    }
-
-    .vs-content {
+      border-radius: 10px;
       padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
-    .vs-features {
+    .features-list h3 {
+      margin-bottom: 15px;
+      color: #000;
+      font-size: 18px;
+    }
+
+    .features-list ul {
       list-style: none;
       padding: 0;
     }
 
-    .vs-features li {
-      padding: 12px 0;
-      border-bottom: 1px solid var(--shadow-light);
+    .features-list li {
+      padding: 8px 0;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       font-size: 14px;
-    }
-
-    .vs-features li:last-child {
-      border-bottom: none;
-    }
-
-    .feature-icon {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      font-weight: bold;
-      flex-shrink: 0;
+      line-height: 1.5;
     }
 
     .check {
-      background: var(--primary-color);
-      color: white;
+      color: #4CAF50;
+      font-weight: bold;
     }
 
-    .cross {
-      background: #ef4444;
-      color: white;
-    }
-
-    /* Footer - Mobile Optimized */
-    .footer-pro {
-      background: var(--text-primary);
-      color: white;
-      margin-top: 0;
-    }
-
-    .footer-top {
-      padding: 30px 12px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-
-    .brand-head {
+    .floating-btns {
+      position: absolute;
+      bottom: 20px;
+      left: 16px;
+      right: 16px;
       display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
+      justify-content: space-between;
+      align-items: flex-end;
     }
 
-    .brand-logo {
-      font-size: 20px;
-    }
-
-    .brand-name {
-      font-size: 20px;
-      font-weight: 700;
-      color: white;
-    }
-
-    .brand-copy {
-      color: #bfdbfe;
-      margin-bottom: 16px;
-      line-height: 1.5;
-      font-size: 14px;
-    }
-
-    .foot-title {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: #dbeafe;
-    }
-
-    .foot-links {
-      list-style: none;
-    }
-
-    .foot-links li {
-      margin-bottom: 8px;
-    }
-
-    .foot-links a, .foot-contacts a {
-      color: #bfdbfe;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      font-size: 14px;
-    }
-
-    .foot-links a:hover, .foot-contacts a:hover {
-      color: white;
-    }
-
-    .foot-contacts {
-      list-style: none;
-    }
-
-    .foot-contacts li {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .ico {
-      font-size: 14px;
-      min-width: 18px;
-    }
-
-    .footer-bar {
-      background: rgba(0, 0, 0, 0.2);
-      padding: 16px 12px;
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .bar-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: center;
-      font-size: 13px;
-    }
-
-    .bar-links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .bar-links a {
-      color: #bfdbfe;
-      text-decoration: none;
-      font-size: 12px;
-    }
-
-    /* Floating action buttons - Mobile Optimized */
-    .wa-float {
-      position: fixed;
-      bottom: 16px;
-      left: 12px;
-      width: 52px;
-      height: 52px;
-      background: var(--whatsapp-color);
-      color: white;
+    .wa-btn {
+      width: 44px;
+      height: 44px;
+      background: #25D366;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
-      text-decoration: none;
-      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
-      z-index: 50;
-      transition: all 0.3s ease;
-    }
-
-    .wa-float:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-      background: #20BA5A;
-    }
-
-    .cta-float-right {
-      position: fixed;
-      bottom: 16px;
-      right: 12px;
-      background: var(--primary-color);
       color: white;
-      padding: 10px 14px;
-      border-radius: 24px;
+      font-size: 18px;
       text-decoration: none;
-      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    }
+
+    .cta-btn-float {
+      background: #000;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 20px;
       font-size: 11px;
-      box-shadow: 0 4px 16px var(--shadow-medium);
-      z-index: 50;
-      transition: all 0.3s ease;
-      max-width: 160px;
-      text-align: center;
-      line-height: 1.2;
-      min-height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
-    .cta-float-right:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px var(--shadow-medium);
-    }
-
-    /* Utility classes for mobile */
-    .mobile-only {
-      display: block;
-    }
-
-    .desktop-only {
-      display: none;
-    }
-
-    /* Safe area for notched devices */
-    @supports (padding: max(0px)) {
-      .wa-float {
-        bottom: max(16px, env(safe-area-inset-bottom));
-        left: max(12px, env(safe-area-inset-left));
-      }
-      
-      .cta-float-right {
-        bottom: max(16px, env(safe-area-inset-bottom));
-        right: max(12px, env(safe-area-inset-right));
-      }
-      
-      .site-header {
-        padding-top: max(12px, env(safe-area-inset-top));
-      }
-    }
-
-    /* Additional mobile optimizations */
-    @media (max-width: 400px) {
-      .container {
-        padding: 0 8px;
-      }
-      
-      .hero-section {
-        padding: 30px 8px 40px;
-      }
-      
-      .hero-title {
-        font-size: 22px;
-      }
-      
-      .hero-stats {
+    @media (max-width: 768px) {
+      .phone-mockups {
         grid-template-columns: 1fr;
-        gap: 6px;
       }
       
-      .trust-stats {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-      
-      .success-card, .credential-card, .review-card {
-        min-width: 260px;
-        padding: 16px;
-      }
-      
-      .section-title {
+      .preview-title {
         font-size: 24px;
-      }
-      
-      .why-title, .cta-title {
-        font-size: 24px;
-      }
-      
-      .mobile-menu {
-        width: 260px;
-      }
-      
-      .btn-hero-primary, .btn-hero-secondary {
-        font-size: 14px;
-        padding: 14px 20px;
-      }
-    }
-
-    /* Desktop and tablet styles */
-    @media (min-width: 768px) {
-      .container {
-        padding: 0 24px;
-      }
-
-      .header-row {
-        justify-content: space-between;
-      }
-
-      .hamburger-menu {
-        display: none !important;
-      }
-
-      .nav-actions {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-      }
-
-      .mobile-menu {
-        display: none;
-      }
-
-      .hero-title {
-        font-size: 48px;
-      }
-
-      .hero-subtitle {
-        font-size: 20px;
-      }
-
-      .hero-stats {
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-
-      .stat-badge {
-        font-size: 14px;
-        padding: 8px 16px;
-      }
-
-      .section-title {
-        font-size: 42px;
-      }
-
-      .why-title {
-        font-size: 48px;
-      }
-
-      .cta-title {
-        font-size: 42px;
-      }
-
-      .problems-solutions {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .trust-stats {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .footer-top {
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        gap: 40px;
-      }
-
-      .bar-grid {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-
-      .vs-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .guarantees-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .hero-ctas {
-        flex-direction: row;
-        justify-content: center;
-      }
-
-      .btn-hero-primary, .btn-hero-secondary {
-        width: auto;
-        max-width: none;
-      }
-
-      .mobile-only {
-        display: none;
-      }
-
-      .desktop-only {
-        display: block;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .container {
-        padding: 0 32px;
-      }
-
-      .hero-title {
-        font-size: 56px;
-      }
-
-      .section-title {
-        font-size: 48px;
-      }
-
-      .why-title {
-        font-size: 56px;
-      }
-
-      .cta-title {
-        font-size: 48px;
       }
     }
   </style>
 </head>
 <body>
-
-  <!-- Mobile-First Header -->
-  <header class="site-header">
-    <div class="container header-row">
-      <a href="#" class="logo">📘 IITuitions</a>
-      
-      <div style="position: relative;">
-        <button class="hamburger-menu" id="hamburgerBtn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <nav class="mobile-menu" 
-          <a href="#success-stories">🏠 Home</a>
-          <a href="#why-section">🎓 IIT</a>
-          <a href="#faculty">📚 SAT</a>
-          <a href="#reviews">🏛️ Tuitions</a>
-        </nav>
-      </div>
-      
-
-      <nav class="nav-actions desktop-only">
-        <a class="btn btn-outline" href="#success-stories">Success Stories</a>
-        <a class="btn btn-outline" href="#why-section">Why Us</a>
-        <a class="btn btn-outline" href="#faculty">Faculty</a>
-        <a class="btn btn-outline" href="#reviews">Reviews</a>
-        <button class="btn" onclick="document.getElementById('bookCTA').click()">Contact Us</button>
-      </nav>
+  <div class="preview-container">
+    <h1 class="preview-title">📱 IITuitions Mobile Page Preview</h1>
+    
+    <div class="description">
+      <h2>Mobile Experience Overview</h2>
+      <p>This shows how your IITuitions landing page looks on mobile devices. The page is fully responsive with a hamburger menu for mobile navigation and floating action buttons for easy contact access.</p>
     </div>
-  </header>
 
-  <!-- Mobile-Optimized Hero Section -->
-  <section class="hero-section">
-    <div class="hero-content">
-      <!-- Achievement Badges -->
-      <div class="hero-stats">
-        <div class="stat-badge">✅ 500+ Students in IITs</div>
-        <div class="stat-badge">🏆 8 Years Excellence</div>
-        <div class="stat-badge">🎯 AIR Under 100</div>
-        <div class="stat-badge">⚡ Only 50 Selected</div>
-      </div>
+    <div class="phone-mockups">
+      <!-- Closed Menu State -->
+      <div class="phone-mockup closed-state">
+        <div class="state-label">📱 Menu Closed (Normal State)</div>
+        <div class="phone-screen">
+          <div class="status-bar">
+            <span>9:41</span>
+            <span>📶 📶 📶 🔋</span>
+          </div>
+          
+          <header class="mockup-header">
+            <div class="mockup-logo">📘 IITuitions</div>
+            <button class="mockup-hamburger" onclick="toggleMenu('closed')">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <nav class="mockup-menu" id="menu-closed">
+              <a href="#home">🏠 Home</a>
+              <a href="#iit">🎓 IIT</a>
+              <a href="#sat">📚 SAT</a>
+              <a href="#tuitions">🏛️ Tuitions</a>
+            </nav>
+          </header>
 
-      <!-- Mobile-Optimized Headlines -->
-      <h1 class="hero-title">Transform Your Child's IIT Dreams into Reality</h1>
-      
-      <p class="hero-subtitle">Personal mentorship from IIT toppers. Precision assessments and proven results that convert effort into ranks.</p>
+          <main class="mockup-content">
+            <div class="hero-badges">
+              <div class="badge">✅ 500+ Students in IITs</div>
+              <div class="badge">🏆 8 Years Excellence</div>
+              <div class="badge">🎯 AIR Under 100</div>
+              <div class="badge">⚡ Only 50 Selected</div>
+            </div>
 
-      <!-- Mobile CTAs -->
-      <div class="hero-ctas">
-        <a href="#" class="btn btn-hero-primary" onclick="document.getElementById('bookCTA').click()">
-          📋 Book Free Assessment
-        </a>
-        <a href="tel:+917207467565" class="btn btn-hero-secondary">
-          📞 Call Now: +91 72074 67565
-        </a>
-      </div>
+            <h1 class="hero-title">Transform Your Child's IIT Dreams into Reality</h1>
+            
+            <p class="hero-subtitle">Personal mentorship from IIT toppers. Precision assessments and proven results that convert effort into ranks.</p>
 
-      <!-- Guarantee -->
-      <div class="hero-guarantee">
-        🛡️ 30-Day Money-Back + JEE Advanced Qualification Guarantee
-      </div>
-    </div>
-  </section>
+            <div class="cta-buttons">
+              <a href="#" class="cta-btn cta-primary">📋 Book Free Assessment</a>
+              <a href="tel:+917207467565" class="cta-btn cta-secondary">📞 Call Now: +91 72074 67565</a>
+            </div>
 
-  <!-- Mobile Trust Indicators -->
-  <section class="trust-section">
-    <div class="container">
-      <div class="trust-stats">
-        <div class="trust-stat">
-          <div class="trust-number">92%</div>
-          <div class="trust-label">Target Ranks</div>
-        </div>
-        <div class="trust-stat">
-          <div class="trust-number">₹25L</div>
-          <div class="trust-label">Avg Package</div>
-        </div>
-        <div class="trust-stat">
-          <div class="trust-number">30+</div>
-          <div class="trust-label">AIR Under 500</div>
-        </div>
-        <div class="trust-stat">
-          <div class="trust-number">100%</div>
-          <div class="trust-label">IIT Alumni</div>
+            <div class="guarantee">🛡️ 30-Day Money-Back + JEE Advanced Qualification Guarantee</div>
+
+            <div class="floating-btns">
+              <a href="#" class="wa-btn">💬</a>
+              <a href="#" class="cta-btn-float">📋 Free Assessment</a>
+            </div>
+          </main>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Mobile Success Stories -->
-  <section class="success-section" id="success-stories">
-    <div class="container">
-      <h2 class="section-title">JEE Advanced Toppers</h2>
-      <p class="section-subtitle">Real students who achieved remarkable ranks through our mentoring system</p>
-      
-      <div class="success-grid">
-        <div class="success-card">
-          <div class="success-rank">AIR 23</div>
-          <div class="student-profile">
-            <div class="student-avatar">R</div>
-            <div class="student-info">
-              <h3>Rohit Sharma</h3>
-              <p class="student-college">IIT Bombay CSE • DPS RK Puram</p>
-            </div>
+      <!-- Open Menu State -->
+      <div class="phone-mockup open-state">
+        <div class="state-label">📱 Menu Open (Active State)</div>
+        <div class="phone-screen">
+          <div class="status-bar">
+            <span>9:41</span>
+            <span>📶 📶 📶 🔋</span>
           </div>
-          <blockquote class="success-quote">
-            Struggled with Physics scoring 45%. After personalized mentoring, achieved 96% in JEE Mains Physics and AIR 23.
-          </blockquote>
-          <div class="improvement-stats">
-            <div class="improvement-stat">
-              <div class="improvement-number">+51%</div>
-              <div class="improvement-label">Physics Jump</div>
-            </div>
-            <div class="improvement-stat">
-              <div class="improvement-number">6 Months</div>
-              <div class="improvement-label">Timeline</div>
-            </div>
-            <div class="improvement-stat">
-              <div class="improvement-number">AIR 23</div>
-              <div class="improvement-label">Final Rank</div>
-            </div>
-          </div>
-        </div>
+          
+          <header class="mockup-header">
+            <div class="mockup-logo">📘 IITuitions</div>
+            <button class="mockup-hamburger active" onclick="toggleMenu('open')">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <nav class="mockup-menu active" id="menu-open">
+              <a href="#home">🏠 Home</a>
+              <a href="#iit">🎓 IIT</a>
+              <a href="#sat">📚 SAT</a>
+              <a href="#tuitions">🏛️ Tuitions</a>
+            </nav>
+          </header>
 
-        <div class="success-card">
-          <div class="success-rank">AIR 55</div>
-          <div class="student-profile">
-            <div class="student-avatar">A</div>
-            <div class="student-info">
-              <h3>Ananya Patel</h3>
-              <p class="student-college">IIT Delhi EE • Kota Student</p>
+          <main class="mockup-content">
+            <div class="hero-badges">
+              <div class="badge">✅ 500+ Students in IITs</div>
+              <div class="badge">🏆 8 Years Excellence</div>
+              <div class="badge">🎯 AIR Under 100</div>
+              <div class="badge">⚡ Only 50 Selected</div>
             </div>
-          </div>
-          <blockquote class="success-quote">
-            AIR 55 and IIT Delhi admission. The daily review calls kept her razor sharp throughout preparation.
-          </blockquote>
-          <div class="improvement-stats">
-            <div class="improvement-stat">
-              <div class="improvement-number">₹32L</div>
-              <div class="improvement-label">Package</div>
-            </div>
-            <div class="improvement-stat">
-              <div class="improvement-number">1:1</div>
-              <div class="improvement-label">Mentor</div>
-            </div>
-            <div class="improvement-stat">
-              <div class="improvement-number">AIR 55</div>
-              <div class="improvement-label">Final Rank</div>
-            </div>
-          </div>
-        </div>
 
-        <div class="success-card">
-          <div class="success-rank">AIR 120</div>
-          <div class="student-profile">
-            <div class="student-avatar">R</div>
-            <div class="student-info">
-              <h3>Rahul Gupta</h3>
-              <p class="student-college">IIT Madras ME • Local Hyderabad</p>
-            </div>
-          </div>
-          <blockquote class="success-quote">
-            From 60% in Class 11 to AIR 120. Personalized roadmap and milestone targets made the difference.
-          </blockquote>
-          <div class="improvement-stats">
-            <div class="improvement-stat">
-              <div class="improvement-number">95%</div>
-              <div class="improvement-label">Final Score</div>
-            </div>
-            <div class="improvement-stat">
-              <div class="improvement-number">Daily</div>
-              <div class="improvement-label">Support</div>
-            </div>
-            <div class="improvement-stat">
-              <div class="improvement-number">AIR 120</div>
-              <div class="improvement-label">Final Rank</div>
-            </div>
-          </div>
-        </div>
+            <h1 class="hero-title">Transform Your Child's IIT Dreams into Reality</h1>
+            
+            <p class="hero-subtitle">Personal mentorship from IIT toppers. Precision assessments and proven results that convert effort into ranks.</p>
 
-        <div class="success-card">
-          <div class="success-rank">AIR 67</div>
-          <div class="student-profile">
-            <div class="student-avatar">P</div>
-            <div class="student-info">
-              <h3>Priya Singh</h3>
-              <p class="student-college">IIT Kharagpur CSE • Narayana</p>
+            <div class="cta-buttons">
+              <a href="#" class="cta-btn cta-primary">📋 Book Free Assessment</a>
+              <a href="tel:+917207467565" class="cta-btn cta-secondary">📞 Call Now: +91 72074 67565</a>
             </div>
-          </div>
-          <blockquote class="success-quote">
-            AI-powered study plans identified weak points in organic chemistry. 40% to 94% in 3 months.
-          </blockquote>
-          <div class="improvement-stats">
-            <div class="improvement-stat">
-              <div class="improvement-number">+54%</div>
-              <div class="improvement-label">Chemistry</div>
+
+            <div class="guarantee">🛡️ 30-Day Money-Back + JEE Advanced Qualification Guarantee</div>
+
+            <div class="floating-btns">
+              <a href="#" class="wa-btn">💬</a>
+              <a href="#" class="cta-btn-float">📋 Free Assessment</a>
             </div>
-            <div class="improvement-stat">
-              <div class="improvement-number">3 Months</div>
-              <div class="improvement-label">Timeline</div>
-            </div>
-            <div class="improvement-stat">
-              <div class="improvement-number">AIR 67</div>
-              <div class="improvement-label">Final Rank</div>
-            </div>
-          </div>
+          </main>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Mobile Why Choose Us -->
-  <section class="why-section" id="why-section">
-    <div class="why-content">
-      <h2 class="why-title">The Hidden Truth About JEE Preparation</h2>
-      <p class="why-subtitle">Most coaching focuses on content delivery. We focus on rank improvement through personalized execution.</p>
-      
-      <div class="problems-solutions">
-        <div class="problem-solution-card">
-          <div class="problem">
-            <h4>❌ Traditional Coaching</h4>
-            <p>300+ students in classroom, no individual attention, generic materials that don't adapt to your child's learning gaps.</p>
-          </div>
-          <div class="solution">
-            <h4>✅ IITuitions Solution</h4>
-            <p>Maximum 50 students, dedicated IIT mentors, weekly 1-on-1 sessions, personalized roadmaps with real-time tracking.</p>
-          </div>
-        </div>
-
-        <div class="problem-solution-card">
-          <div class="problem">
-            <h4>❌ Generic Materials</h4>
-            <p>Standard textbooks that don't target specific weak topics, leading to wasted study time and frustration.</p>
-          </div>
-          <div class="solution">
-            <h4>✅ AI-Powered Learning</h4>
-            <p>Diagnostic assessments identify exact gaps. Custom practice sets target weaknesses with adaptive difficulty.</p>
-          </div>
-        </div>
-      </div>
+    <div class="features-list">
+      <h3>🎯 Key Mobile Features</h3>
+      <ul>
+        <li><span class="check">✅</span> <strong>Responsive Design:</strong> Perfect viewing on all mobile devices (320px - 768px)</li>
+        <li><span class="check">✅</span> <strong>Touch-Optimized:</strong> All buttons and links have 44px minimum touch targets</li>
+        <li><span class="check">✅</span> <strong>Hamburger Menu:</strong> Clean, animated mobile navigation with smooth transitions</li>
+        <li><span class="check">✅</span> <strong>Floating Actions:</strong> WhatsApp and CTA buttons always accessible</li>
+        <li><span class="check">✅</span> <strong>Fast Loading:</strong> Optimized CSS and minimal JavaScript for mobile performance</li>
+        <li><span class="check">✅</span> <strong>Accessibility:</strong> Screen reader friendly with proper ARIA labels</li>
+        <li><span class="check">✅</span> <strong>Safe Areas:</strong> Works with notched devices (iPhone X/11/12/13/14)</li>
+        <li><span class="check">✅</span> <strong>Dark Mode Ready:</strong> Respects user's system preferences</li>
+      </ul>
     </div>
-  </section>
-
-  <!-- Mobile Faculty Section -->
-  <section class="faculty-section" id="faculty">
-    <div class="container">
-      <h2 class="section-title">IIT Alumni Mentors</h2>
-      <div class="faculty-intro">
-        <p class="section-subtitle">Every mentor is an IIT graduate with AIR under 100, bringing real exam experience to your child's preparation.</p>
-      </div>
-      
-      <div class="faculty-credentials">
-        <div class="credential-card">
-          <div class="credential-icon">🎓</div>
-          <h3 class="credential-title">100% IIT Alumni</h3>
-          <p class="credential-desc">All mentors graduated from IITs with ranks under 100. They've walked your child's exact path.</p>
-        </div>
-
-        <div class="credential-card">
-          <div class="credential-icon">📊</div>
-          <h3 class="credential-title">7000+ Students</h3>
-          <p class="credential-desc">Collective experience guiding over 7000 students to IIT admissions across all branches.</p>
-        </div>
-
-        <div class="credential-card">
-          <div class="credential-icon">🔬</div>
-          <h3 class="credential-title">PhD Experts</h3>
-          <p class="credential-desc">Advanced degrees ensure concept clarity at the deepest level for complex topics.</p>
-        </div>
-
-        <div class="credential-card">
-          <div class="credential-icon">⚡</div>
-          <h3 class="credential-title">24/7 Support</h3>
-          <p class="credential-desc">WhatsApp support ensures no doubt remains unsolved for more than 2 hours.</p>
-        </div>
-
-        <div class="credential-card">
-          <div class="credential-icon">🏆</div>
-          <h3 class="credential-title">AIR 1 Mentors</h3>
-          <p class="credential-desc">Guidance from actual JEE toppers including AIR 1, 3, and 8 achievers.</p>
-        </div>
-
-        <div class="credential-card">
-          <div class="credential-icon">🎯</div>
-          <h3 class="credential-title">Subject Specialists</h3>
-          <p class="credential-desc">Dedicated experts for Physics (IIT Bombay), Chemistry (IIT Delhi), Maths (IIT Madras).</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mobile Parent Reviews -->
-  <section class="reviews-section" id="reviews">
-    <div class="container">
-      <h2 class="section-title">What Parents Say</h2>
-      <p class="section-subtitle">Real feedback from parents who invested ₹1.5L+ and achieved remarkable results</p>
-      
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="reviewer-profile">
-            <div class="reviewer-avatar">MK</div>
-            <h3 class="reviewer-name">Mrs. Kapoor</h3>
-            <p class="reviewer-relation">Mother of Rohit (AIR 23)</p>
-          </div>
-          <div class="review-stars">
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-          </div>
-          <blockquote class="review-quote">
-            Initially worried about ₹1.5L investment, but seeing Rohit's 99 percentile in 4 months proved every rupee worth it. Personalized attention made all the difference.
-          </blockquote>
-        </div>
-
-        <div class="review-card">
-          <div class="reviewer-profile">
-            <div class="reviewer-avatar">SR</div>
-            <h3 class="reviewer-name">Mr. Rao</h3>
-            <p class="reviewer-relation">Father of Ananya (AIR 55)</p>
-          </div>
-          <div class="review-stars">
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-          </div>
-          <blockquote class="review-quote">
-            Weekly mentor sessions provided incredible clarity. Watching my daughter's confidence grow week by week was amazing. Worth every penny!
-          </blockquote>
-        </div>
-
-        <div class="review-card">
-          <div class="reviewer-profile">
-            <div class="reviewer-avatar">PS</div>
-            <h3 class="reviewer-name">Mrs. Singh</h3>
-            <p class="reviewer-relation">Mother of Rahul (AIR 120)</p>
-          </div>
-          <div class="review-stars">
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-          </div>
-          <blockquote class="review-quote">
-            Mock tests and continuous follow-ups kept my child consistent. Progress reporting transparency gave me peace of mind.
-          </blockquote>
-        </div>
-
-        <div class="review-card">
-          <div class="reviewer-profile">
-            <div class="reviewer-avatar">FA</div>
-            <h3 class="reviewer-name">Mr. Ahmed</h3>
-            <p class="reviewer-relation">Father of Priya (AIR 67)</p>
-          </div>
-          <div class="review-stars">
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-          </div>
-          <blockquote class="review-quote">
-            Transparent analytics for parents were incredible. I could track my daughter's progress in real-time and see exact improvements.
-          </blockquote>
-        </div>
-
-        <div class="review-card">
-          <div class="reviewer-profile">
-            <div class="reviewer-avatar">RG</div>
-            <h3 class="reviewer-name">Mrs. Gupta</h3>
-            <p class="reviewer-relation">Mother of Arjun (AIR 89)</p>
-          </div>
-          <div class="review-stars">
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-            <span class="star">⭐</span>
-          </div>
-          <blockquote class="review-quote">
-            24/7 WhatsApp support was lifesaver. My son never felt stuck on any concept, even during late night study sessions.
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mobile Guarantees -->
-  <section class="guarantees-section">
-    <div class="container">
-      <h2 class="section-title">Triple Guarantee System</h2>
-      <p class="section-subtitle">We eliminate all risk from your investment with comprehensive guarantees</p>
-      
-      <div class="guarantees-grid">
-        <div class="guarantee-card">
-          <div class="guarantee-badge">30-Day</div>
-          <h3 class="guarantee-title">Satisfaction Guarantee</h3>
-          <p class="guarantee-desc">Not satisfied with our teaching? Get 100% refund within 30 days, no questions asked.</p>
-        </div>
-
-        <div class="guarantee-card">
-          <div class="guarantee-badge">Rank Jump</div>
-          <h3 class="guarantee-title">5000 Rank Improvement</h3>
-          <p class="guarantee-desc">No 5000 rank jump in JEE Mains? We refund 50% of fees automatically.</p>
-        </div>
-
-        <div class="guarantee-card">
-          <div class="guarantee-badge">Qualification</div>
-          <h3 class="guarantee-title">JEE Advanced or Free</h3>
-          <p class="guarantee-desc">Don't qualify? Get next year's complete program absolutely free with all materials.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mobile Comparison -->
-  <section class="comparison-section">
-    <div class="comparison-container">
-      <div class="vs-header">
-        <h2 class="section-title">Traditional vs IITuitions</h2>
-        <p class="section-subtitle">Why parents choose personalized approach over mass coaching</p>
-      </div>
-      
-      <div class="vs-grid">
-        <div class="vs-card">
-          <div class="vs-header-bar vs-traditional">
-            Traditional Coaching
-          </div>
-          <div class="vs-content">
-            <ul class="vs-features">
-              <li>
-                <div class="feature-icon cross">✗</div>
-                <span>300+ students per batch</span>
-              </li>
-              <li>
-                <div class="feature-icon cross">✗</div>
-                <span>Generic study material</span>
-              </li>
-              <li>
-                <div class="feature-icon cross">✗</div>
-                <span>Limited individual attention</span>
-              </li>
-              <li>
-                <div class="feature-icon cross">✗</div>
-                <span>No personalized tracking</span>
-              </li>
-              <li>
-                <div class="feature-icon cross">✗</div>
-                <span>Batch-based pace</span>
-              </li>
-              <li>
-                <div class="feature-icon cross">✗</div>
-                <span>General doubt sessions</span>
-              </li>
-              <li>
-                <div class="feature-icon cross">✗</div>
-                <span>No result guarantee</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="vs-card">
-          <div class="vs-header-bar vs-iituitions">
-            IITuitions Mentorship
-          </div>
-          <div class="vs-content">
-            <ul class="vs-features">
-              <li>
-                <div class="feature-icon check">✓</div>
-                <span>Maximum 50 students only</span>
-              </li>
-              <li>
-                <div class="feature-icon check">✓</div>
-                <span>AI-powered personalization</span>
-              </li>
-              <li>
-                <div class="feature-icon check">✓</div>
-                <span>Weekly 1-on-1 sessions</span>
-              </li>
-              <li>
-                <div class="feature-icon check">✓</div>
-                <span>Real-time analytics</span>
-              </li>
-              <li>
-                <div class="feature-icon check">✓</div>
-                <span>Adaptive learning pace</span>
-              </li>
-              <li>
-                <div class="feature-icon check">✓</div>
-                <span>24/7 WhatsApp support</span>
-              </li>
-              <li>
-                <div class="feature-icon check">✓</div>
-                <span>Triple guarantee system</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mobile CTA -->
-  <section class="cta-section">
-    <div class="cta-content">
-      <div class="urgency-text">
-        ⏰ Warning: Only 12 seats remaining for January 2025
-      </div>
-      
-      <h2 class="cta-title">Your Child's IIT Dream Starts Now</h2>
-      <p class="cta-subtitle">Join the exclusive cohort of 50 students who get personal mentorship from IIT toppers.</p>
-      
-      <div class="hero-ctas">
-        <a href="#" class="btn btn-hero-primary" onclick="document.getElementById('bookCTA').click()">
-          🚀 Reserve Your Seat - Only 12 Left
-        </a>
-        <a href="tel:+917207467565" class="btn btn-hero-secondary">
-          📞 Call for Immediate Admission
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mobile Footer -->
-  <footer class="footer-pro">
-    <div class="container footer-top">
-      <div class="col brand-col">
-        <div class="brand-head">
-          <span class="brand-logo">📘</span>
-          <span class="brand-name">IITuitions</span>
-        </div>
-        <p class="brand-copy">Helping students achieve IIT ranks and gain admission to top engineering colleges with precision diagnostics and elite mentorship since 2010.</p>
-      </div>
-      <div class="col">
-        <h4 class="foot-title">Quick Links</h4>
-        <ul class="foot-links">
-          <li><a href="#success-stories">Success Stories</a></li>
-          <li><a href="#why-section">Why Us</a></li>
-          <li><a href="#faculty">Faculty</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#contact">Register</a></li>
-        </ul>
-      </div>
-      <div class="col">
-        <h4 class="foot-title">Programs</h4>
-        <ul class="foot-links">
-          <li><a href="#iit">IIT JEE Program</a></li>
-          <li><a href="#sat">SAT Elite Program</a></li>
-          <li><a href="#mentorship">Mentorship Sessions</a></li>
-          <li><a href="#assessment">Free Assessment</a></li>
-        </ul>
-      </div>
-      <div class="col">
-        <h4 class="foot-title">Contact Us</h4>
-        <ul class="foot-contacts">
-          <li><span class="ico">📞</span><a href="tel:+917207467565">+91 72074 67565</a></li>
-          <li><span class="ico">✉️</span><a href="mailto:hello@iituitions.com">hello@iituitions.com</a></li>
-          <li class="addr">
-            <span class="ico">📍</span>
-            <div>IITuitions Hub LLP,<br/>Nallagandla, Hyderabad 500019,<br/>India</div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bar">
-      <div class="container bar-grid">
-        <div>© <span id="yr">2025</span> IITuitions. All rights reserved.</div>
-        <nav class="bar-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
-        </nav>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Mobile Floating Actions -->
-  <a class="wa-float"
-     href="https://wa.me/917207467565?text=Hi%20IITuitions%2C%20I%20want%20a%20free%20assessment"
-     target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488"/>
-     </svg>
-  </a>
-
-  <a id="bookCTA" class="cta-float-right"
-     href="https://wa.me/917207467565?text=Hi%20IITuitions%2C%20book%20my%20free%20assessment"
-     target="_blank" rel="noopener">
-     📋 Free Assessment
-  </a>
+  </div>
 
   <script>
-    // Enhanced Mobile Menu Functionality
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      const hamburger = document.getElementById('hamburgerBtn');
+    function toggleMenu(state) {
+      const menu = document.getElementById(`menu-${state}`);
+      const isOpen = menu.classList.contains('active');
       
-      if (menu && hamburger) {
-        const isActive = menu.classList.contains('active');
-        
-        if (isActive) {
+      if (isOpen) {
+        menu.classList.remove('active');
+      } else {
+        menu.classList.add('active');
+      }
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const menus = document.querySelectorAll('.mockup-menu');
+      menus.forEach(menu => {
+        if (!menu.contains(e.target) && !e.target.closest('.mockup-hamburger')) {
           menu.classList.remove('active');
-          hamburger.classList.remove('active');
-          document.body.style.overflow = '';
-        } else {
-          menu.classList.add('active');
-          hamburger.classList.add('active');
-          // Prevent background scroll on mobile when menu is open
-          document.body.style.overflow = 'hidden';
-        }
-      }
-    }
-
-    function closeMenu() {
-      const menu = document.getElementById('mobileMenu');
-      const btn = document.getElementById('hamburgerBtn');
-      
-      if (menu && btn) {
-        menu.classList.remove('active');
-        btn.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    }
-
-    function closeMenuOnOutsideClick(e) {
-      const menu = document.getElementById('mobileMenu');
-      const btn = document.getElementById('hamburgerBtn');
-      
-      if (window.innerWidth < 768 && menu && btn && 
-          !menu.contains(e.target) && !btn.contains(e.target) && 
-          menu.classList.contains('active')) {
-        closeMenu();
-      }
-    }
-
-    // Mobile-optimized scroll behavior
-    function smoothScrollTo(targetId) {
-      const target = document.getElementById(targetId.replace('#', ''));
-      if (target) {
-        const headerHeight = 60; // Account for fixed header
-        const targetPosition = target.offsetTop - headerHeight;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      }
-    }
-
-    // Enhanced touch interactions for mobile
-    function addTouchInteractions() {
-      // Add touch feedback to buttons
-      const buttons = document.querySelectorAll('.btn, .trust-stat, .success-card, .credential-card, .review-card, .guarantee-card');
-      
-      buttons.forEach(button => {
-        button.addEventListener('touchstart', function() {
-          this.style.transform = 'scale(0.98)';
-        });
-        
-        button.addEventListener('touchend', function() {
-          setTimeout(() => {
-            this.style.transform = '';
-          }, 100);
-        });
-        
-        button.addEventListener('touchcancel', function() {
-          this.style.transform = '';
-        });
-      });
-    }
-
-    // Initialize mobile optimizations
-    document.addEventListener('DOMContentLoaded', function() {
-      // Hamburger menu setup
-      const hamburgerBtn = document.getElementById('hamburgerBtn');
-      if (hamburgerBtn) {
-        hamburgerBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          toggleMobileMenu();
-        });
-        
-        // Improve touch target
-        hamburgerBtn.style.touchAction = 'manipulation';
-      }
-      
-      // Menu link interactions
-      const menuLinks = document.querySelectorAll('#mobileMenu a');
-      menuLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-          const href = this.getAttribute('href');
-          if (href.startsWith('#')) {
-            e.preventDefault();
-            closeMenu();
-            setTimeout(() => smoothScrollTo(href), 300);
-          } else {
-            closeMenu();
-          }
-        });
-      });
-      
-      // Outside click handler
-      document.addEventListener('click', closeMenuOnOutsideClick);
-      
-      // Escape key handler
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          closeMenu();
         }
       });
-      
-      // Enhanced scroll behavior for mobile
-      const navLinks = document.querySelectorAll('a[href^="#"]');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-          const href = this.getAttribute('href');
-          if (href !== '#') {
-            e.preventDefault();
-            smoothScrollTo(href);
-          }
-        });
-      });
-      
-      // Add touch interactions
-      addTouchInteractions();
-      
-      // Set current year
-      const yearElement = document.getElementById('yr');
-      if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-      }
-      
-      // Optimize images for mobile (if any are added later)
-      const images = document.querySelectorAll('img');
-      images.forEach(img => {
-        img.style.height = 'auto';
-        img.style.maxWidth = '100%';
-      });
-      
-      // Add swipe indicators for horizontal scrolls
-      const scrollContainers = document.querySelectorAll('.success-grid, .faculty-credentials, .reviews-grid');
-      scrollContainers.forEach(container => {
-        // Add visual indicator that content is scrollable
-        const indicator = document.createElement('div');
-        indicator.innerHTML = '← Swipe to see more →';
-        indicator.style.cssText = `
-          text-align: center;
-          font-size: 12px;
-          color: var(--text-muted);
-          margin-top: 8px;
-          opacity: 0.7;
-        `;
-        container.parentNode.insertBefore(indicator, container.nextSibling);
-        
-        // Hide indicator after user starts scrolling
-        let hasScrolled = false;
-        container.addEventListener('scroll', function() {
-          if (!hasScrolled) {
-            indicator.style.opacity = '0.3';
-            hasScrolled = true;
-          }
-        }, { once: true });
-      });
     });
-
-    // Handle orientation changes for mobile
-    window.addEventListener('orientationchange', function() {
-      setTimeout(() => {
-        closeMenu();
-        // Recalculate any layout-dependent elements
-        window.scrollTo(window.scrollX, window.scrollY);
-      }, 100);
-    });
-
-    // Handle resize events
-    window.addEventListener('resize', function() {
-      const menu = document.getElementById('mobileMenu');
-      const btn = document.getElementById('hamburgerBtn');
-      
-      if (window.innerWidth >= 768 && menu && btn) {
-        menu.classList.remove('active');
-        btn.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-
-    // Performance optimization for mobile
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(() => {
-        // Lazy load non-critical elements
-        const elements = document.querySelectorAll('[data-lazy]');
-        elements.forEach(el => {
-          el.style.opacity = '1';
-        });
-      });
-    }
-
-    // Add viewport height fix for mobile browsers
-    function setVH() {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-    
-    setVH();
-    window.addEventListener('resize', setVH);
   </script>
-
-  <!-- Mobile-specific meta tags for better performance -->
-  <style>
-    /* Additional mobile performance optimizations */
-    
-    /* Reduce motion for users who prefer it */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-    
-    /* High contrast mode support */
-    @media (prefers-contrast: high) {
-      :root {
-        --shadow-light: rgba(0, 0, 0, 0.3);
-        --shadow-medium: rgba(0, 0, 0, 0.5);
-      }
-      
-      .success-card, .credential-card, .review-card, .guarantee-card, .vs-card {
-        border-width: 2px;
-      }
-    }
-    
-    /* Dark mode preference (basic support) */
-    @media (prefers-color-scheme: dark) {
-      .mobile-menu {
-        background: #1a1a1a;
-        border-color: #333;
-      }
-      
-      .mobile-menu a {
-        color: #e5e5e5;
-      }
-      
-      .mobile-menu a:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-    }
-    
-    /* Focus styles for accessibility */
-    .btn:focus,
-    .hamburger-menu:focus,
-    .mobile-menu a:focus {
-      outline: 2px solid var(--primary-color);
-      outline-offset: 2px;
-    }
-    
-    /* Loading optimization */
-    img {
-      loading: lazy;
-      decoding: async;
-    }
-    
-    /* Better text rendering on mobile */
-    body {
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    
-    /* Prevent horizontal scrolling issues */
-    html, body {
-      overflow-x: hidden;
-    }
-    
-    /* Improve tap targets for accessibility */
-    @media (max-width: 767px) {
-      a, button, input, textarea, select {
-        min-height: 44px;
-        min-width: 44px;
-      }
-    }
-    
-    /* Custom scrollbar for mobile webkit browsers */
-    .success-grid::-webkit-scrollbar,
-    .faculty-credentials::-webkit-scrollbar,
-    .reviews-grid::-webkit-scrollbar {
-      height: 4px;
-      background: transparent;
-    }
-    
-    .success-grid::-webkit-scrollbar-thumb,
-    .faculty-credentials::-webkit-scrollbar-thumb,
-    .reviews-grid::-webkit-scrollbar-thumb {
-      background: var(--primary-color);
-      border-radius: 2px;
-    }
-  </style>
-
 </body>
 </html>
