@@ -22,7 +22,7 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       line-height: 1.6;
-      color: #1e40af; /* Blue 700 for main text */
+      color: #000000; /* Black for main text */
       background: #ffffff; /* Pure white background */
       overflow-x: hidden; /* Prevent horizontal scroll */
       -webkit-font-smoothing: antialiased;
@@ -37,16 +37,16 @@
       width: 100%;
     }
 
-    /* Mobile-first header with blue theme */
+    /* Mobile-first header with black theme */
     .site-header {
       background: #ffffff;
-      box-shadow: 0 2px 10px rgba(30, 64, 175, 0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
       z-index: 100;
       padding: 16px 0;
       width: 100%;
-      border-bottom: 2px solid rgba(30, 64, 175, 0.1);
+      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
     }
 
     .header-row {
@@ -66,7 +66,7 @@
     .logo-circle {
       width: 44px; /* iOS minimum touch target */
       height: 44px;
-      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+      background: linear-gradient(135deg, #000000 0%, #333333 100%);
       color: white;
       border-radius: 50%;
       display: flex;
@@ -80,7 +80,7 @@
     .brand-name {
       font-size: 22px;
       font-weight: 700;
-      color: #1e40af; /* Blue 700 */
+      color: #000000; /* Black */
       white-space: nowrap;
     }
 
@@ -99,17 +99,17 @@
       padding: 8px;
       border-radius: 8px;
       transition: background-color 0.3s ease;
-      -webkit-tap-highlight-color: rgba(29, 78, 216, 0.2);
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.2);
     }
 
     .hamburger-menu:active {
-      background-color: rgba(29, 78, 216, 0.1);
+      background-color: rgba(0, 0, 0, 0.1);
     }
 
     .hamburger-menu span {
       width: 24px;
       height: 3px;
-      background: #1e40af;
+      background: #000000;
       border-radius: 2px;
       transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transform-origin: center;
@@ -117,7 +117,7 @@
 
     .hamburger-menu.active span:nth-child(1) {
       transform: rotate(45deg) translate(6px, 6px);
-      background: #1d4ed8;
+      background: #000000;
     }
 
     .hamburger-menu.active span:nth-child(2) {
@@ -127,10 +127,10 @@
 
     .hamburger-menu.active span:nth-child(3) {
       transform: rotate(-45deg) translate(6px, -6px);
-      background: #1d4ed8;
+      background: #000000;
     }
 
-    /* Enhanced mobile menu overlay with blue theme */
+    /* Enhanced mobile menu overlay with black theme */
     .mobile-menu {
       position: fixed;
       top: 0;
@@ -138,7 +138,7 @@
       width: 100%;
       height: 100vh;
       height: 100dvh; /* Dynamic viewport height for mobile browsers */
-      background: rgba(30, 64, 175, 0.95);
+      background: rgba(0, 0, 0, 0.95);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       display: flex;
@@ -174,7 +174,7 @@
       align-items: center;
       justify-content: center;
       white-space: nowrap;
-      -webkit-tap-highlight-color: rgba(29, 78, 216, 0.3);
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
     }
 
     .mobile-menu.active a {
@@ -201,11 +201,9 @@
       display: none;
     }
 
-
-
-    /* Enhanced mobile-optimized buttons - Blue theme */
+    /* Enhanced mobile-optimized buttons - Black theme */
     .btn {
-      background: #1d4ed8;
+      background: #000000;
       color: white;
       border: none;
       padding: 14px 24px;
@@ -221,7 +219,7 @@
       text-align: center;
       min-height: 44px; /* iOS minimum touch target */
       min-width: 44px;
-      -webkit-tap-highlight-color: rgba(29, 78, 216, 0.3);
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
       touch-action: manipulation;
       user-select: none;
       -webkit-user-select: none;
@@ -229,9 +227,9 @@
 
     .btn:hover,
     .btn:focus {
-      background: #1e40af;
+      background: #333333;
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(29, 78, 216, 0.3);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
     .btn:active {
@@ -241,13 +239,13 @@
 
     .btn-outline {
       background: transparent;
-      color: #1d4ed8;
-      border: 2px solid #1d4ed8;
+      color: #000000;
+      border: 2px solid #000000;
     }
 
     .btn-outline:hover,
     .btn-outline:focus {
-      background: #1d4ed8;
+      background: #000000;
       color: white;
     }
 
@@ -261,7 +259,7 @@
       font-weight: 700;
       text-align: center;
       margin: 40px 0 30px;
-      color: #1e40af;
+      color: #000000;
     }
 
     /* Mobile-optimized horizontal scroll */
@@ -275,7 +273,7 @@
       -webkit-overflow-scrolling: touch;
       scroll-behavior: smooth;
       scrollbar-width: thin;
-      scrollbar-color: #1d4ed8 transparent;
+      scrollbar-color: #000000 transparent;
     }
 
     .h-scroll::-webkit-scrollbar {
@@ -283,17 +281,17 @@
     }
 
     .h-scroll::-webkit-scrollbar-track {
-      background: rgba(29, 78, 216, 0.1);
+      background: rgba(0, 0, 0, 0.1);
       border-radius: 3px;
     }
 
     .h-scroll::-webkit-scrollbar-thumb {
-      background: #1d4ed8;
+      background: #000000;
       border-radius: 3px;
     }
 
     .h-scroll::-webkit-scrollbar-thumb:hover {
-      background: #1e40af;
+      background: #333333;
     }
 
     /* Card styles */
@@ -301,14 +299,14 @@
       background: white;
       border-radius: 16px;
       padding: 24px;
-      box-shadow: 0 4px 20px rgba(30, 64, 175, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
-      border: 1px solid rgba(30, 64, 175, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(30, 64, 175, 0.15);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     }
 
     .review-card {
@@ -327,7 +325,7 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: #1d4ed8;
+      background: #000000;
       color: white;
       display: flex;
       align-items: center;
@@ -338,20 +336,20 @@
 
     .quote {
       font-style: italic;
-      color: #374151;
+      color: #333333;
       margin-bottom: 12px;
       font-size: 16px;
     }
 
     .muted {
-      color: #6b7280;
+      color: #666666;
       font-size: 14px;
     }
 
     /* Stars rating */
     .stars::before {
       content: "⭐⭐⭐⭐⭐";
-      color: #f59e0b;
+      color: #000000;
     }
 
     /* Programs grid */
@@ -373,11 +371,11 @@
       font-weight: 700;
       margin-bottom: 12px;
       text-align: center;
-      color: #1e40af;
+      color: #000000;
     }
 
     .cards-grid p {
-      color: #374151;
+      color: #333333;
       text-align: center;
       margin-bottom: 20px;
       line-height: 1.6;
@@ -389,10 +387,10 @@
     }
 
     .contact-card {
-      background: linear-gradient(135deg, rgba(29, 78, 216, 0.05), rgba(30, 64, 175, 0.05));
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
       border-radius: 20px;
       padding: 30px;
-      border: 1px solid rgba(29, 78, 216, 0.2);
+      border: 1px solid rgba(0, 0, 0, 0.2);
     }
 
     .contact-head {
@@ -403,12 +401,12 @@
     .contact-head h2 {
       font-size: 32px;
       font-weight: 700;
-      color: #1e40af;
+      color: #000000;
       margin-bottom: 10px;
     }
 
     .badge-open {
-      background: #1d4ed8;
+      background: #000000;
       color: white;
       padding: 8px 16px;
       border-radius: 20px;
@@ -436,12 +434,12 @@
 
     .info-title {
       font-weight: 600;
-      color: #1e40af;
+      color: #000000;
       margin-bottom: 5px;
     }
 
     .info-sub {
-      color: #374151;
+      color: #333333;
       font-size: 14px;
     }
 
@@ -452,7 +450,7 @@
     }
 
     .chip {
-      background: #1d4ed8;
+      background: #000000;
       color: white;
       padding: 8px 16px;
       border-radius: 20px;
@@ -463,7 +461,7 @@
     }
 
     .chip:hover {
-      background: #1e40af;
+      background: #333333;
       transform: translateY(-2px);
     }
 
@@ -480,7 +478,7 @@
       border-radius: 12px;
       padding: 20px;
       margin-top: 20px;
-      border: 1px solid rgba(29, 78, 216, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .hours li {
@@ -488,7 +486,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 8px 0;
-      border-bottom: 1px solid rgba(29, 78, 216, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .hours li:last-child {
@@ -496,17 +494,17 @@
     }
 
     .hours span {
-      color: #374151;
+      color: #333333;
     }
 
     .hours b {
-      color: #1d4ed8;
+      color: #000000;
       font-weight: 600;
     }
 
     /* Footer */
     .footer-pro {
-      background: #1e40af;
+      background: #000000;
       color: white;
       margin-top: 80px;
     }
@@ -536,7 +534,7 @@
     }
 
     .brand-copy {
-      color: #bfdbfe;
+      color: #cccccc;
       margin-bottom: 20px;
       line-height: 1.6;
     }
@@ -545,7 +543,7 @@
       font-size: 18px;
       font-weight: 600;
       margin-bottom: 16px;
-      color: #dbeafe;
+      color: #eeeeee;
     }
 
     .foot-links {
@@ -557,7 +555,7 @@
     }
 
     .foot-links a, .foot-contacts a {
-      color: #bfdbfe;
+      color: #cccccc;
       text-decoration: none;
       transition: color 0.3s ease;
     }
@@ -583,10 +581,10 @@
     }
 
     .footer-bar {
-      background: #1e3a8a;
+      background: #1a1a1a;
       padding: 20px 16px;
       text-align: center;
-      border-top: 1px solid #3b82f6;
+      border-top: 1px solid #333333;
     }
 
     .bar-grid {
@@ -604,19 +602,19 @@
     }
 
     .bar-links a {
-      color: #bfdbfe;
+      color: #cccccc;
       text-decoration: none;
       font-size: 14px;
     }
 
-    /* Floating action buttons */
+    /* Floating action buttons - WhatsApp with original color */
     .wa-float {
       position: fixed;
       bottom: 20px;
       left: 16px;
       width: 56px;
       height: 56px;
-      background: #1d4ed8;
+      background: #25D366; /* Original WhatsApp green */
       color: white;
       border-radius: 50%;
       display: flex;
@@ -624,30 +622,30 @@
       justify-content: center;
       font-size: 24px;
       text-decoration: none;
-      box-shadow: 0 4px 20px rgba(29, 78, 216, 0.4);
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
       transition: all 0.3s ease;
       z-index: 50;
     }
 
     .wa-float:hover {
       transform: scale(1.05);
-      box-shadow: 0 6px 25px rgba(29, 78, 216, 0.6);
-      background: #1e40af;
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+      background: #20BA5A;
     }
 
-    /* Book Assessment floating button - Blue theme */
+    /* Book Assessment floating button - Black theme */
     .cta-float {
       position: fixed;
       bottom: 20px;
       right: 16px;
-      background: #1d4ed8;
+      background: #000000;
       color: white;
       padding: 12px 16px;
       border-radius: 28px;
       text-decoration: none;
       font-weight: 600;
       font-size: 12px;
-      box-shadow: 0 4px 20px rgba(29, 78, 216, 0.4);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
       transition: all 0.3s ease;
       text-align: center;
       line-height: 1.3;
@@ -661,9 +659,9 @@
     }
 
     .cta-float:hover {
-      background: #1e40af;
+      background: #333333;
       transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(29, 78, 216, 0.6);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
     }
 
     /* Mobile responsiveness for floating buttons */
@@ -681,8 +679,6 @@
         padding: 10px 14px;
         max-width: 160px;
       }
-      
-
     }
 
     @media (max-width: 320px) {
@@ -691,8 +687,6 @@
         padding: 8px 12px;
         max-width: 140px;
       }
-      
-
     }
 
     /* Safe area for notched devices */
@@ -706,11 +700,9 @@
         bottom: max(20px, env(safe-area-inset-bottom));
         right: max(16px, env(safe-area-inset-right));
       }
-      
-
     }
 
-    /* Contact Modal - Blue theme */
+    /* Contact Modal - Black theme */
     .modal {
       position: fixed;
       top: 0;
@@ -718,7 +710,7 @@
       width: 100%;
       height: 100%;
       height: 100dvh; /* Dynamic viewport height */
-      background: rgba(30, 64, 175, 0.8);
+      background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       display: none;
@@ -746,7 +738,7 @@
       transform: scale(0.8) translateY(20px);
       opacity: 0;
       transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      border: 2px solid rgba(29, 78, 216, 0.1);
+      border: 2px solid rgba(0, 0, 0, 0.1);
     }
 
     .modal.active .modal-card {
@@ -762,7 +754,7 @@
       border: none;
       font-size: 32px;
       cursor: pointer;
-      color: #6b7280;
+      color: #666666;
       width: 44px; /* iOS minimum touch target */
       height: 44px;
       display: flex;
@@ -776,14 +768,14 @@
     .modal-close:hover,
     .modal-close:focus {
       background: #f3f4f6;
-      color: #1e40af;
+      color: #000000;
     }
 
     .modal h3 {
       font-size: 26px;
       font-weight: 700;
       margin-bottom: 24px;
-      color: #1e40af;
+      color: #000000;
       padding-right: 40px; /* Space for close button */
     }
 
@@ -795,7 +787,7 @@
       display: block;
       margin-bottom: 8px;
       font-weight: 600;
-      color: #1e40af;
+      color: #000000;
       font-size: 16px;
     }
 
@@ -811,15 +803,15 @@
       background: #fafafa;
       -webkit-appearance: none;
       appearance: none;
-      color: #1e40af;
+      color: #000000;
     }
 
     .form-row input:focus,
     .form-row textarea:focus {
       outline: none;
-      border-color: #1d4ed8;
+      border-color: #000000;
       background: white;
-      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
     }
 
     .form-row textarea {
@@ -829,7 +821,7 @@
 
     .form-note {
       text-align: center;
-      color: #6b7280;
+      color: #666666;
       font-size: 14px;
       margin-top: 15px;
       line-height: 1.5;
@@ -848,7 +840,7 @@
 
     /* Enhanced touch feedback */
     .btn, .chip, .card, .hamburger-menu {
-      -webkit-tap-highlight-color: rgba(29, 78, 216, 0.2);
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.2);
       touch-action: manipulation;
       user-select: none;
       -webkit-user-select: none;
@@ -859,7 +851,7 @@
     .chip:focus,
     input:focus,
     textarea:focus {
-      outline: 2px solid #1d4ed8;
+      outline: 2px solid #000000;
       outline-offset: 2px;
     }
 
@@ -899,8 +891,6 @@
       .mobile-menu {
         display: none;
       }
-
-
 
       .section-title {
         font-size: 36px;
@@ -986,8 +976,6 @@
       <a href="https://forms.gle/wxgSqXpHgAgKTKBQ7" target="_blank" rel="noopener" onclick="closeMenuOnLinkClick()">👨‍🏫 Register as Tutor</a>
     </nav>
   </header>
-
-
 
   <!-- Reviews: horizontal scroll -->
   <section class="container">
@@ -1124,7 +1112,7 @@
       <div class="col brand-col">
         <div class="brand-head"><span class="brand-logo" aria-hidden="true">📘</span><span class="brand-name">IITuitions</span></div>
         <p class="brand-copy">Helping students achieve <strong>1500+ SAT</strong> scores and gain admission to top universities — and helping IIT aspirants convert effort into ranks — since 2010.</p>
-        <div class="socials"><a href="#" aria-label="Instagram" style="color: #dbeafe; font-size: 18px;">📷 Instagram</a></div>
+        <div class="socials"><a href="#" aria-label="Instagram" style="color: #cccccc; font-size: 18px;">📷 Instagram</a></div>
       </div>
 
       <div class="col">
