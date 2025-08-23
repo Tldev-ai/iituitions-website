@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>IITuitions — Online Classes & Home Tuitions</title>
-  <meta name="description" content="IITuitions provides expert online classes and home tuitions with experienced IIT alumni faculty for JEE preparation.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Get Your Child Into IIT - 500+ Success Stories | IITuitions</title>
+  <meta name="description" content="Personal 1-on-1 coaching from IIT alumni. 92% students achieve target ranks. Only 50 students selected annually. Book free assessment now.">
   <style>
-    /* Reset and base styles - Mobile First */
+    /* Mobile-First CSS Reset */
     * {
       margin: 0;
       padding: 0;
@@ -23,364 +23,445 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       line-height: 1.6;
-      color: #1e40af; /* Blue 700 for main text */
-      background: #ffffff; /* Pure white background */
+      color: #000000;
+      background: #ffffff;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      touch-action: manipulation;
     }
 
+    /* Mobile-first container */
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 16px;
+      padding: 0 12px;
       width: 100%;
     }
 
-    /* Header */
+    /* Mobile Header */
     .site-header {
       background: #ffffff;
-      box-shadow: 0 2px 10px rgba(30, 64, 175, 0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
       z-index: 100;
-      padding: 16px 0;
-      width: 100%;
-      border-bottom: 2px solid rgba(30, 64, 175, 0.1);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .header-row {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      min-height: 44px;
-      position: relative;
+      justify-content: space-between;
+      min-height: 48px;
     }
 
-    /* Mobile hamburger menu - ALWAYS VISIBLE ON MOBILE */
-    .hamburger-menu {
-      background: none;
-      border: none;
-      width: 44px;
-      height: 44px;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 5px;
-      padding: 8px;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-      -webkit-tap-highlight-color: rgba(29, 78, 216, 0.2);
-      position: relative;
-      z-index: 101;
-    }
-
-    .hamburger-menu:active {
-      background-color: rgba(29, 78, 216, 0.1);
-    }
-
-    .hamburger-menu span {
-      width: 28px;
-      height: 3px;
-      background: #1e40af;
-      border-radius: 2px;
-      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transform-origin: center;
-      display: block;
-    }
-
-    .hamburger-menu.active span:nth-child(1) {
-      transform: rotate(45deg) translate(7px, 7px);
-      background: #1d4ed8;
-    }
-
-    .hamburger-menu.active span:nth-child(2) {
-      opacity: 0;
-      transform: scale(0);
-    }
-
-    .hamburger-menu.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
-      background: #1d4ed8;
-    }
-
-    /* Mobile menu dropdown - styled like image */
-    .mobile-menu {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      width: 280px;
-      background: #ffffff;
-      border: 1px solid rgba(30, 64, 175, 0.15);
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(30, 64, 175, 0.15);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px);
-      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      z-index: 200;
-      margin-top: 8px;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .mobile-menu.active {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .mobile-menu a {
-      color: #374151;
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: #000000;
       text-decoration: none;
-      font-size: 16px;
-      font-weight: 600;
-      padding: 18px 24px;
-      border-bottom: 1px solid rgba(30, 64, 175, 0.08);
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-height: 60px;
-      -webkit-tap-highlight-color: rgba(29, 78, 216, 0.1);
     }
 
-    .mobile-menu a:last-child {
-      border-bottom: none;
-    }
-
-    .mobile-menu a:hover,
-    .mobile-menu a:active {
-      background: rgba(29, 78, 216, 0.05);
-      color: #1d4ed8;
-      transform: translateX(4px);
-    }
-
-    .mobile-menu a:first-child {
-      border-radius: 20px 20px 0 0;
-    }
-
-    .mobile-menu a:last-child {
-      border-radius: 0 0 20px 20px;
-    }
-
-    /* Desktop nav (hidden on mobile) */
-    .nav-actions {
-      display: none;
-    }
-
-    /* Enhanced mobile-optimized buttons */
-    .btn {
-      background: #1d4ed8;
+    .header-cta {
+      background: #000000;
       color: white;
-      border: none;
-      padding: 14px 24px;
-      border-radius: 25px;
-      font-weight: 600;
-      cursor: pointer;
+      padding: 10px 16px;
+      border-radius: 20px;
       text-decoration: none;
+      font-weight: 600;
+      font-size: 12px;
+      transition: all 0.3s ease;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .header-cta:hover {
+      background: #333333;
+      transform: translateY(-1px);
+    }
+
+    /* Urgency Banner - Mobile Optimized */
+    .urgency-banner {
+      background: #000000;
+      color: white;
+      text-align: center;
+      padding: 8px 12px;
+      font-weight: 600;
+      font-size: 12px;
+      border-bottom: 1px solid #333333;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .urgency-text {
       display: inline-flex;
       align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
       justify-content: center;
-      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      font-size: 16px;
-      text-align: center;
-      min-height: 44px;
-      min-width: 44px;
-      -webkit-tap-highlight-color: rgba(29, 78, 216, 0.3);
-      touch-action: manipulation;
-      user-select: none;
-      -webkit-user-select: none;
     }
 
-    .btn:hover,
-    .btn:focus {
-      background: #1e40af;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(29, 78, 216, 0.3);
+    .blink {
+      animation: blink 1s infinite;
     }
 
-    .btn:active {
-      transform: translateY(0);
-      transition: transform 0.1s ease;
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0.5; }
     }
 
-    .btn-primary {
-      background: #1d4ed8;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: #1d4ed8;
-      border: 2px solid #1d4ed8;
-    }
-
-    .btn-outline:hover,
-    .btn-outline:focus {
-      background: #1d4ed8;
+    /* Mobile Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, #000000 0%, #333333 100%);
       color: white;
-    }
-
-    /* Page hero */
-    .page-hero {
+      padding: 40px 12px 50px;
       text-align: center;
-      padding: 60px 16px 80px;
-      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
-      color: white;
       position: relative;
       overflow: hidden;
     }
 
-    .page-hero::before {
+    .hero-section::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-      animation: float 20s infinite linear;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)" /></svg>') repeat;
+      opacity: 0.3;
     }
 
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0px); }
-    }
-
-    .page-title {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      line-height: 1.2;
+    .hero-content {
       position: relative;
-      z-index: 1;
-    }
-
-    .page-sub {
-      font-size: 18px;
-      opacity: 0.9;
+      z-index: 2;
       max-width: 600px;
-      margin: 0 auto 40px;
-      position: relative;
-      z-index: 1;
-      line-height: 1.6;
+      margin: 0 auto;
     }
 
-    /* Learning Modes Section */
-    .modes-section {
-      padding: 40px 0;
-      background: rgba(29, 78, 216, 0.03);
+    /* Mobile Hero Stats */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .stat-badge {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 6px 10px;
+      border-radius: 16px;
+      font-size: 10px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      white-space: nowrap;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    /* Mobile Headlines */
+    .hero-headline {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-subheadline {
+      font-size: 15px;
+      opacity: 0.95;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+
+    /* Mobile CTAs */
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .btn-hero-primary {
+      background: white;
+      color: #000000;
+      font-weight: 700;
+      padding: 16px 24px;
+      font-size: 14px;
+      border-radius: 25px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-hero-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      font-weight: 600;
+      padding: 14px 24px;
+      font-size: 13px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-hero-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(255, 255, 255, 0.4);
+    }
+
+    .btn-hero-secondary:hover {
+      background: white;
+      color: #000000;
+    }
+
+    /* Mobile Guarantee */
+    .hero-guarantee {
+      background: rgba(255, 255, 255, 0.1);
+      color: #e5e5e5;
+      padding: 10px 16px;
+      border-radius: 20px;
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      line-height: 1.3;
+      max-width: 90%;
+    }
+
+    /* Mobile Trust Section */
+    .trust-section {
+      background: #f9f9f9;
+      padding: 40px 12px;
+      text-align: center;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .trust-stat {
+      background: white;
+      padding: 20px 16px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .trust-stat:hover {
+      transform: translateY(-2px);
+    }
+
+    .trust-number {
+      font-size: 28px;
+      font-weight: 800;
+      color: #000000;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .trust-label {
+      font-size: 12px;
+      color: #666666;
+      font-weight: 600;
+    }
+
+    /* Mobile Programs Section */
+    .programs-section {
+      padding: 50px 12px;
+      background: white;
     }
 
     .section-title {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 700;
       text-align: center;
-      margin-bottom: 40px;
-      color: #1e40af;
-      position: relative;
+      margin-bottom: 30px;
+      color: #000000;
+      line-height: 1.2;
     }
 
-    .section-title::after {
-      content: '';
-      width: 50px;
-      height: 3px;
-      background: #1d4ed8;
-      display: block;
-      margin: 15px auto 0;
-      border-radius: 2px;
-    }
-
-    .modes-grid {
+    .programs-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 30px;
-      margin-top: 40px;
+      gap: 24px;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    .mode-card {
-      background: white;
-      border-radius: 20px;
-      padding: 30px 25px;
-      box-shadow: 0 8px 25px rgba(30, 64, 175, 0.1);
+    .program-card {
+      background: #f9f9f9;
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+      border: 2px solid transparent;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
-      border-left: 5px solid #1d4ed8;
-      border: 1px solid rgba(30, 64, 175, 0.1);
     }
 
-    .mode-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(30, 64, 175, 0.15);
+    .program-card.featured {
+      border-color: #000000;
+      background: #f0f9ff;
     }
 
-    .mode-icon {
-      font-size: 48px;
-      text-align: center;
-      margin-bottom: 20px;
-      display: block;
-    }
-
-    .mode-title {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 15px;
-      color: #1e40af;
-      text-align: center;
-    }
-
-    .mode-description {
-      font-size: 16px;
-      color: #374151;
-      margin-bottom: 25px;
-      text-align: center;
-      line-height: 1.6;
-    }
-
-    .mode-features {
-      list-style: none;
-      margin-bottom: 30px;
-    }
-
-    .mode-features li {
-      padding: 10px 0;
-      padding-left: 30px;
-      position: relative;
-      color: #374151;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    .mode-features li::before {
-      content: "✓";
+    .program-badge {
       position: absolute;
-      left: 0;
-      color: #1d4ed8;
-      font-weight: bold;
-      font-size: 16px;
+      top: -8px;
+      right: 16px;
+      background: #000000;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: 600;
     }
 
-    .mode-cta {
+    .program-card:hover {
+      border-color: #000000;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .program-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+
+    .program-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 12px;
+    }
+
+    .program-desc {
+      color: #333333;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .program-stats {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      padding: 16px 0;
+      border-top: 1px solid #e5e5e5;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .stat-item {
       text-align: center;
     }
 
-    /* Parent Reviews Section */
-    .reviews-section {
-      padding: 60px 0;
+    .stat-num {
+      display: block;
+      font-size: 16px;
+      font-weight: 800;
+      color: #000000;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: #666666;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .program-cta {
+      background: #000000;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      min-height: 44px;
+      line-height: 1.2;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .program-cta:hover {
+      background: #333333;
+      transform: translateY(-1px);
+    }
+
+    /* Mobile Problem Section */
+    .problem-section {
+      padding: 50px 12px;
       background: white;
     }
 
-    .reviews-container {
-      overflow: hidden;
-      position: relative;
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    .reviews-scroll {
+    .problem-card {
+      background: #f5f5f5;
+      border-left: 4px solid #ff4444;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .solution-card {
+      background: #f0f9ff;
+      border-left: 4px solid #000000;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #000000;
+    }
+
+    .card-text {
+      color: #333333;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    /* Mobile Success Stories */
+    .success-section {
+      padding: 50px 12px;
+      background: #f9f9f9;
+    }
+
+    .success-scroll {
       display: flex;
       gap: 20px;
       overflow-x: auto;
@@ -391,677 +472,1161 @@
       -ms-overflow-style: none;
     }
 
-    .reviews-scroll::-webkit-scrollbar {
+    .success-scroll::-webkit-scrollbar {
       display: none;
     }
 
-    .review-card {
-      background: rgba(29, 78, 216, 0.03);
+    .success-card {
+      background: white;
       border-radius: 16px;
-      padding: 25px;
+      padding: 20px;
       min-width: 280px;
+      max-width: 320px;
       scroll-snap-align: start;
-      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.1);
-      transition: transform 0.3s ease;
-      border-left: 4px solid #1d4ed8;
-      border: 1px solid rgba(30, 64, 175, 0.1);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      position: relative;
+      flex-shrink: 0;
     }
 
-    .review-card:hover {
-      transform: translateY(-3px);
+    .success-rank {
+      position: absolute;
+      top: -12px;
+      right: 16px;
+      background: #000000;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 10px;
+      font-weight: 700;
     }
 
-    .review-header {
+    .student-profile {
       display: flex;
       align-items: center;
-      gap: 15px;
-      margin-bottom: 15px;
+      gap: 12px;
+      margin-bottom: 16px;
     }
 
-    .review-avatar {
-      width: 50px;
-      height: 50px;
+    .student-avatar {
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
+      background: #000000;
+      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .review-info h4 {
       font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 3px;
-      color: #1e40af;
+      font-weight: 700;
     }
 
-    .review-mode {
-      background: #1d4ed8;
-      color: white;
-      padding: 3px 8px;
-      border-radius: 10px;
+    .student-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 4px;
+    }
+
+    .student-college {
+      color: #666666;
       font-size: 11px;
       font-weight: 600;
     }
 
-    .review-quote {
+    .success-quote {
       font-style: italic;
-      color: #374151;
-      line-height: 1.6;
-      margin-bottom: 15px;
+      font-size: 13px;
+      line-height: 1.4;
+      color: #333333;
+      margin-bottom: 16px;
+      position: relative;
+      padding-left: 12px;
     }
 
-    .review-stars {
-      display: flex;
-      gap: 2px;
+    .success-quote::before {
+      content: '"';
+      font-size: 24px;
+      color: #000000;
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      font-family: serif;
     }
 
-    .review-stars::before {
-      content: "⭐⭐⭐⭐⭐";
-      color: #f59e0b;
-      font-size: 14px;
+    /* Mobile Faculty Section */
+    .faculty-section {
+      padding: 50px 12px;
+      background: white;
     }
 
-    /* Contact Section */
-    .contact-section {
-      padding: 40px 0 20px;
-      background: #1e40af;
-      color: white;
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    .contact-content {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-      margin-bottom: 40px;
-    }
-
-    .contact-item {
+    .faculty-point {
       display: flex;
       align-items: flex-start;
-      gap: 15px;
-      padding: 0 10px;
+      gap: 12px;
+      padding: 16px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      border-left: 3px solid #000000;
     }
 
-    .contact-icon {
+    .faculty-icon {
       font-size: 20px;
-      min-width: 25px;
-      color: #dbeafe;
       margin-top: 2px;
+      flex-shrink: 0;
     }
 
-    .contact-link {
-      color: #bfdbfe;
-      text-decoration: none;
-      font-size: 16px;
-      transition: color 0.3s ease;
+    .faculty-text {
+      flex: 1;
+    }
+
+    .faculty-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    .faculty-desc {
+      color: #333333;
+      font-size: 12px;
       line-height: 1.4;
     }
 
-    .contact-link:hover {
+    /* Mobile Guarantees Section */
+    .guarantees-section {
+      padding: 50px 12px;
+      background: #f0f9ff;
+    }
+
+    .guarantees-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .guarantee-card {
+      background: white;
+      border: 2px solid #000000;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .guarantee-badge {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #000000;
       color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: 700;
     }
 
-    .contact-address {
-      color: #bfdbfe;
+    .guarantee-title {
       font-size: 16px;
-      line-height: 1.4;
+      font-weight: 700;
+      color: #000000;
+      margin: 12px 0 8px;
     }
 
-    .footer-bottom {
-      border-top: 1px solid #3b82f6;
-      padding-top: 20px;
+    .guarantee-desc {
+      color: #333333;
+      line-height: 1.4;
+      font-size: 12px;
+    }
+
+    /* Mobile About Section */
+    .about-section {
+      padding: 50px 12px;
+      background: #f9f9f9;
+    }
+
+    .about-content {
+      max-width: 600px;
+      margin: 0 auto;
       text-align: center;
     }
 
-    .copyright {
-      color: #bfdbfe;
+    .about-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #000000;
+    }
+
+    .about-text {
+      color: #333333;
+      line-height: 1.6;
+      margin-bottom: 20px;
       font-size: 14px;
-      margin-bottom: 15px;
     }
 
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 30px;
     }
 
-    .footer-link {
-      color: #bfdbfe;
-      text-decoration: none;
-      font-size: 14px;
-      transition: color 0.3s ease;
+    .highlight-item {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
     }
 
-    .footer-link:hover {
+    .highlight-number {
+      font-size: 20px;
+      font-weight: 800;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    .highlight-text {
+      color: #666666;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* Mobile Final CTA */
+    .final-cta-section {
+      background: linear-gradient(135deg, #000000 0%, #333333 100%);
       color: white;
+      padding: 50px 12px;
+      text-align: center;
     }
 
-    /* Floating action buttons - Blue theme */
+    .final-cta-content {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .final-cta-title {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .final-cta-subtitle {
+      font-size: 14px;
+      margin-bottom: 20px;
+      opacity: 0.95;
+    }
+
+    .scarcity-text {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      padding: 8px 12px;
+      border-radius: 16px;
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Mobile Form Section */
+    .form-section {
+      background: white;
+      padding: 40px 12px;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #f9f9f9;
+      padding: 24px 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .form-title {
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 16px;
+      color: #000000;
+    }
+
+    .form-subtitle {
+      text-align: center;
+      color: #666666;
+      margin-bottom: 24px;
+      font-size: 13px;
+    }
+
+    .form-row {
+      margin-bottom: 16px;
+    }
+
+    .form-row label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #000000;
+      font-size: 13px;
+    }
+
+    .form-row input,
+    .form-row select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e5e5e5;
+      border-radius: 12px;
+      font-size: 16px;
+      font-family: inherit;
+      transition: border-color 0.3s ease;
+      background: white;
+      color: #000000;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-row input:focus,
+    .form-row select:focus {
+      outline: none;
+      border-color: #000000;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-row select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="black" d="M6 9L1.5 4.5h9z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 32px;
+    }
+
+    .btn-form {
+      background: #000000;
+      color: white;
+      border: none;
+      padding: 16px 24px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 14px;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-height: 52px;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-form:hover {
+      background: #333333;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-note {
+      text-align: center;
+      color: #666666;
+      font-size: 11px;
+      margin-top: 12px;
+      line-height: 1.4;
+    }
+
+    /* Mobile WhatsApp Float */
     .wa-float {
       position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 60px;
-      height: 60px;
-      background: #1d4ed8;
+      bottom: 16px;
+      left: 12px;
+      width: 52px;
+      height: 52px;
+      background: #25D366;
       color: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 20px;
       text-decoration: none;
-      box-shadow: 0 6px 25px rgba(29, 78, 216, 0.4);
-      z-index: 50;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
       transition: all 0.3s ease;
     }
 
     .wa-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 30px rgba(29, 78, 216, 0.6);
-      background: #1e40af;
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
     }
 
-    .cta-float-right {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #1d4ed8;
-      color: white;
-      padding: 18px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      box-shadow: 0 6px 25px rgba(29, 78, 216, 0.4);
-      z-index: 50;
-      transition: all 0.3s ease;
-      max-width: 200px;
-      text-align: center;
-      line-height: 1.3;
+    /* Safe area for notched devices */
+    @supports (padding: max(0px)) {
+      .wa-float {
+        bottom: max(16px, env(safe-area-inset-bottom));
+        left: max(12px, env(safe-area-inset-left));
+      }
+      
+      .site-header {
+        padding-top: max(8px, env(safe-area-inset-top));
+      }
     }
 
-    .cta-float-right:hover {
-      background: #1e40af;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(29, 78, 216, 0.6);
-    }
-
-    /* Footer styling */
-    .footer-pro {
-      background: #1e40af;
-      color: white;
-      margin-top: 80px;
-    }
-
-    .footer-top {
-      padding: 40px 16px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-
-    .brand-head {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .brand-logo {
-      font-size: 24px;
-    }
-
-    .brand-name {
-      font-size: 24px;
-      font-weight: 700;
-      color: white;
-    }
-
-    .brand-copy {
-      color: #bfdbfe;
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-
-    .foot-title {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 16px;
-      color: #dbeafe;
-    }
-
-    .foot-links {
-      list-style: none;
-    }
-
-    .foot-links li {
-      margin-bottom: 8px;
-    }
-
-    .foot-links a, .foot-contacts a {
-      color: #bfdbfe;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .foot-links a:hover, .foot-contacts a:hover {
-      color: white;
-    }
-
-    .foot-contacts {
-      list-style: none;
-    }
-
-    .foot-contacts li {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .ico {
-      font-size: 16px;
-      min-width: 20px;
-    }
-
-    .footer-bar {
-      background: #1e3a8a;
-      padding: 20px 16px;
-      text-align: center;
-      border-top: 1px solid #3b82f6;
-    }
-
-    .bar-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .bar-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .bar-links a {
-      color: #bfdbfe;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    /* Responsive design */
+    /* Tablet Responsive Design */
     @media (min-width: 768px) {
       .container {
-        padding: 0 32px;
+        padding: 0 24px;
       }
-
-      .page-title {
-        font-size: 56px;
+      
+      .hero-headline {
+        font-size: 36px;
       }
-
-      .page-sub {
-        font-size: 20px;
+      
+      .hero-subheadline {
+        font-size: 18px;
       }
-
+      
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      
+      .stat-badge {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
+      
       .section-title {
         font-size: 32px;
       }
-
-      .modes-grid {
+      
+      .final-cta-title {
+        font-size: 36px;
+      }
+      
+      .trust-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 800px;
+      }
+      
+      .programs-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
+        max-width: 900px;
       }
-
-      .footer-top {
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        gap: 40px;
+      
+      .problem-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
       }
-
-      .bar-grid {
+      
+      .guarantees-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+      }
+      
+      .faculty-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
+      }
+      
+      .about-highlights {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      .hero-ctas {
         flex-direction: row;
-        justify-content: space-between;
-      }
-
-      .header-row {
-        justify-content: space-between;
-      }
-
-      .hamburger-menu {
-        display: none !important;
-      }
-
-      .nav-actions {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-      }
-
-      .mobile-menu {
-        display: none;
+        justify-content: center;
       }
     }
 
-    /* Auto-scroll animation for reviews */
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    /* Desktop Responsive Design */
+    @media (min-width: 1024px) {
+      .container {
+        padding: 0 32px;
+      }
+      
+      .hero-headline {
+        font-size: 48px;
+      }
+      
+      .hero-subheadline {
+        font-size: 22px;
+      }
+      
+      .section-title {
+        font-size: 36px;
+      }
+      
+      .final-cta-title {
+        font-size: 42px;
+      }
     }
 
-    .reviews-scroll.auto-scroll {
-      animation: scroll 20s linear infinite;
+    /* Very small devices */
+    @media (max-width: 400px) {
+      .container {
+        padding: 0 8px;
+      }
+      
+      .hero-section {
+        padding: 30px 8px 40px;
+      }
+      
+      .hero-headline {
+        font-size: 20px;
+      }
+      
+      .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+      
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      
+      .success-card {
+        min-width: 260px;
+        padding: 16px;
+      }
+      
+      .form-container {
+        padding: 20px 16px;
+      }
+      
+      .urgency-text {
+        font-size: 11px;
+      }
     }
 
-    .reviews-scroll.auto-scroll:hover {
-      animation-play-state: paused;
+    /* Touch interactions */
+    .btn-hero-primary:active,
+    .btn-hero-secondary:active,
+    .program-cta:active,
+    .btn-form:active,
+    .header-cta:active {
+      transform: scale(0.98);
+    }
+
+    /* High contrast mode */
+    @media (prefers-contrast: high) {
+      .trust-stat, .program-card, .success-card, .guarantee-card, .highlight-item {
+        border-width: 2px;
+      }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Dark mode preference */
+    @media (prefers-color-scheme: dark) {
+      .urgency-banner {
+        background: #1a1a1a;
+        border-color: #444;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top bar -->
+  <!-- Mobile Urgency Banner -->
+  <div class="urgency-banner">
+    <div class="urgency-text">
+      <span class="blink">🔥</span>
+      <span>Only 12 seats left for January 2025 batch!</span>
+      <span class="blink">🔥</span>
+    </div>
+  </div>
+
+  <!-- Mobile Header -->
   <header class="site-header">
     <div class="container header-row">
-      <!-- Mobile hamburger with dropdown container -->
-      <div style="position: relative;">
-        <button class="hamburger-menu" id="hamburgerBtn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <!-- Mobile menu dropdown -->
-        <nav class="mobile-menu" id="mobileMenu">
-          <a href="index.html">🏠 Home</a>
-          <a href="iit.html">🎓 IIT</a>
-          <a href="sat.html">📚 SAT</a>
-          <a href="institutions.html">🏛️ Tuitions</a>
-        </nav>
-      </div>
-
-      <!-- Desktop nav (hidden on mobile) -->
-      <nav class="nav-actions">
-        <a class="btn btn-outline" href="index.html">Home</a>
-        <a class="btn btn-outline" href="iit.html">IIT</a>
-        <a class="btn btn-outline" href="sat.html">SAT</a>
-        <a class="btn btn-outline" href="institutions.html">Tuitions</a>
-        <button class="btn btn-primary" onclick="document.getElementById('bookCTA').click()">Contact Us</button>
-      </nav>
+      <a href="#" class="logo">IITuitions</a>
+      <a href="#book-assessment" class="header-cta">Book Assessment</a>
     </div>
   </header>
 
-  <!-- Page title -->
-  <section class="page-hero">
-    <div class="container">
-      <h1 class="page-title">IITuitions</h1>
-      <p class="page-sub">We provide online classes and home tuitions with experienced IIT alumni faculty. Expert guidance, personalized attention, and proven results for JEE success.</p>
-    </div>
-  </section>
+  <!-- Mobile Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <!-- Mobile Hero Stats -->
+      <div class="hero-stats">
+        <div class="stat-badge">🏠 Home Tuitions</div>
+        <div class="stat-badge">💻 Online Classes</div>
+        <div class="stat-badge">🎓 IIT-JEE Coaching</div>
+        <div class="stat-badge">🌍 SAT Preparation</div>
+      </div>
 
-  <!-- Learning Modes -->
-  <section class="modes-section">
-    <div class="container">
-      <h2 class="section-title">Choose Your Learning Mode</h2>
+      <!-- Mobile Headlines -->
+      <h1 class="hero-headline">Elite 1-on-1 Coaching for IIT, SAT & Academic Excellence</h1>
       
-      <div class="modes-grid">
-        <!-- Online Mode -->
-        <div class="mode-card">
-          <span class="mode-icon">💻</span>
-          <h3 class="mode-title">Online Classes</h3>
-          <p class="mode-description">Learn from anywhere with live interactive sessions and experienced IIT alumni mentors</p>
-          <ul class="mode-features">
-            <li>Live HD video classes</li>
-            <li>Interactive digital whiteboard</li>
-            <li>Recorded sessions for revision</li>
-            <li>24/7 doubt clearing support</li>
-            <li>Mobile app for easy access</li>
-            <li>Flexible scheduling options</li>
-            <li>AI-powered progress tracking</li>
-          </ul>
-          <div class="mode-cta">
-            <a href="#contact" class="btn">Start Online Learning</a>
-          </div>
-        </div>
+      <p class="hero-subheadline">Expert mentors come to your home or teach online with personalized attention for guaranteed results.</p>
 
-        <!-- Offline Mode -->
-        <div class="mode-card">
-          <span class="mode-icon">🏠</span>
-          <h3 class="mode-title">Home Tuitions</h3>
-          <p class="mode-description">Personalized one-on-one teaching at your home with experienced IIT alumni faculty</p>
-          <ul class="mode-features">
-            <li>Expert tutor visits your home</li>
-            <li>Complete one-on-one attention</li>
-            <li>Personalized learning pace</li>
-            <li>Comfortable home environment</li>
-            <li>Flexible timing as per your schedule</li>
-            <li>Direct parent-teacher interaction</li>
-            <li>Customized study materials</li>
-          </ul>
-          <div class="mode-cta">
-            <a href="#contact" class="btn btn-outline">Book Home Tuition</a>
-          </div>
-        </div>
+      <!-- Mobile CTAs -->
+      <div class="hero-ctas">
+        <a href="#book-assessment" class="btn-hero-primary">
+          📋 Book Free Assessment (Worth ₹5,000)
+        </a>
+        <a href="#programs" class="btn-hero-secondary">
+          📊 See All Programs
+        </a>
+      </div>
+
+      <!-- Mobile Guarantee */
+      <div class="hero-guarantee">
+        🛡️ 100% Money-Back Guarantee + Target Achievement Promise
       </div>
     </div>
   </section>
 
-  <!-- Parent Reviews -->
-  <section class="reviews-section">
+  <!-- Mobile Trust Indicators -->
+  <section class="trust-section">
     <div class="container">
-      <h2 class="section-title">What Parents Say</h2>
-      <div class="reviews-container">
-        <div class="reviews-scroll" id="reviewsScroll">
-          <div class="review-card">
-            <div class="review-header">
-              <div class="review-avatar" style="background: #1d4ed8;">M</div>
-              <div class="review-info">
-                <h4>Mrs. Kapoor</h4>
-                <span class="review-mode">Online Mode</span>
-              </div>
-            </div>
-            <p class="review-quote">"My son improved from 60 to 99 percentile in just 4 months. The online classes are so interactive!"</p>
-            <div class="review-stars"></div>
-          </div>
+      <div class="trust-grid">
+        <div class="trust-stat">
+          <div class="trust-number">500+</div>
+          <div class="trust-label">IIT Admissions</div>
+        </div>
+        <div class="trust-stat">
+          <div class="trust-number">1500+</div>
+          <div class="trust-label">SAT Scores</div>
+        </div>
+        <div class="trust-stat">
+          <div class="trust-number">95%</div>
+          <div class="trust-label">Grade Improvements</div>
+        </div>
+        <div class="trust-stat">
+          <div class="trust-number">15+</div>
+          <div class="trust-label">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="review-card">
-            <div class="review-header">
-              <div class="review-avatar" style="background: #3b82f6;">R</div>
-              <div class="review-info">
-                <h4>Mr. Rao</h4>
-                <span class="review-mode">Home Tuition</span>
-              </div>
+  <!-- Mobile Programs Section -->
+  <section class="programs-section" id="programs">
+    <div class="container">
+      <h2 class="section-title">Choose Your Perfect Learning Mode</h2>
+      
+      <div class="programs-grid">
+        <div class="program-card featured">
+          <div class="program-badge">Most Popular</div>
+          <div class="program-icon">🏠</div>
+          <h3 class="program-title">Home Tuitions</h3>
+          <p class="program-desc">Expert teachers come to your home for personalized 1-on-1 sessions. Perfect for all subjects, grades 1-12, IIT-JEE, and SAT prep.</p>
+          <div class="program-stats">
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Personal Attention</span>
             </div>
-            <p class="review-quote">"The home tuition provides excellent personal attention. Our tutor is very experienced and punctual."</p>
-            <div class="review-stars"></div>
+            <div class="stat-item">
+              <span class="stat-num">Flexible</span>
+              <span class="stat-label">Timings</span>
+            </div>
           </div>
+          <a href="#book-assessment" class="program-cta">Book Home Tutor</a>
+        </div>
 
-          <div class="review-card">
-            <div class="review-header">
-              <div class="review-avatar" style="background: #1e40af;">S</div>
-              <div class="review-info">
-                <h4>Mrs. Singh</h4>
-                <span class="review-mode">Online Mode</span>
-              </div>
+        <div class="program-card">
+          <div class="program-icon">💻</div>
+          <h3 class="program-title">Online Tuitions</h3>
+          <p class="program-desc">Interactive online classes with recorded sessions. Access expert tutors from anywhere with digital whiteboard and real-time doubt solving.</p>
+          <div class="program-stats">
+            <div class="stat-item">
+              <span class="stat-num">24/7</span>
+              <span class="stat-label">Access</span>
             </div>
-            <p class="review-quote">"Flexible timings helped my daughter balance school and JEE preparation perfectly."</p>
-            <div class="review-stars"></div>
+            <div class="stat-item">
+              <span class="stat-num">Record</span>
+              <span class="stat-label">Sessions</span>
+            </div>
           </div>
+          <a href="#book-assessment" class="program-cta">Book Online Classes</a>
+        </div>
 
-          <div class="review-card">
-            <div class="review-header">
-              <div class="review-avatar" style="background: #2563eb;">A</div>
-              <div class="review-info">
-                <h4>Mr. Ahmed</h4>
-                <span class="review-mode">Home Tuition</span>
-              </div>
+        
+          
+
+        
+
+  
+  <!-- Mobile Success Stories -->
+  <section class="success-section" id="success-stories">
+    <div class="container">
+      <h2 class="section-title">Success Stories Across All Programs</h2>
+      
+      <div class="success-scroll">
+        <div class="success-card">
+          <div class="success-rank">AIR 23</div>
+          <div class="student-profile">
+            <div class="student-avatar">R</div>
+            <div>
+              <div class="student-name">Rohit Sharma</div>
+              <div class="student-college">IIT Bombay CSE • Home Tuition</div>
             </div>
-            <p class="review-quote">"Having the tutor come home is so convenient. My daughter feels comfortable learning at home."</p>
-            <div class="review-stars"></div>
           </div>
+          <blockquote class="success-quote">
+            Having a tutor come home was incredible. The personal attention and flexible timing helped me focus better than any coaching center.
+          </blockquote>
+        </div>
 
-          <div class="review-card">
-            <div class="review-header">
-              <div class="review-avatar" style="background: #1d4ed8;">P</div>
-              <div class="review-info">
-                <h4>Mrs. Patel</h4>
-                <span class="review-mode">Online Mode</span>
-              </div>
+        <div class="success-card">
+          <div class="success-rank">1580 SAT</div>
+          <div class="student-profile">
+            <div class="student-avatar">N</div>
+            <div>
+              <div class="student-name">Nandhini Patel</div>
+              <div class="student-college">Harvard University • Online SAT</div>
             </div>
-            <p class="review-quote">"Excellent teaching quality and regular progress updates. Highly recommended!"</p>
-            <div class="review-stars"></div>
+          </div>
+          <blockquote class="success-quote">
+            Online SAT classes with recorded sessions were perfect. I could review difficult concepts multiple times and practice at my own pace.
+          </blockquote>
+        </div>
+
+        <div class="success-card">
+          <div class="success-rank">98% Grade</div>
+          <div class="student-profile">
+            <div class="student-avatar">A</div>
+            <div>
+              <div class="student-name">Arjun Kumar</div>
+              <div class="student-college">Class 12 CBSE • Home Tuition</div>
+            </div>
+          </div>
+          <blockquote class="success-quote">
+            Mathematics improved from 65% to 98% with home tuitions. The teacher understood my learning style and taught accordingly.
+          </blockquote>
+        </div>
+
+        <div class="success-card">
+          <div class="success-rank">AIR 67</div>
+          <div class="student-profile">
+            <div class="student-avatar">P</div>
+            <div>
+              <div class="student-name">Priya Singh</div>
+              <div class="student-college">IIT Delhi EE • Online IIT Coaching</div>
+            </div>
+          </div>
+          <blockquote class="success-quote">
+            Online IIT coaching was as effective as offline. The digital whiteboard and instant doubt solving made learning interactive.
+          </blockquote>
+        </div>
+
+        <div class="success-card">
+          <div class="success-rank">1550 SAT</div>
+          <div class="student-profile">
+            <div class="student-avatar">S</div>
+            <div>
+              <div class="student-name">Sri Charan</div>
+              <div class="student-college">Princeton University • Home SAT Tutor</div>
+            </div>
+          </div>
+          <blockquote class="success-quote">
+            Home SAT tutoring gave me the confidence I needed. Personal attention and customized study plan led to my dream university.
+          </blockquote>
+        </div>
+
+        <div class="success-card">
+          <div class="success-rank">95% Boards</div>
+          <div class="student-profile">
+            <div class="student-avatar">M</div>
+            <div>
+              <div class="student-name">Meera Reddy</div>
+              <div class="student-college">Class 10 CBSE • Online Tuitions</div>
+            </div>
+          </div>
+          <blockquote class="success-quote">
+            Online tuitions were so convenient! I could attend classes from home and the teacher was always available for doubts.
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile Faculty Section -->
+  <section class="faculty-section">
+    <div class="container">
+      <h2 class="section-title">Why Choose IITuitions?</h2>
+      
+      <div class="faculty-grid">
+        <div class="faculty-point">
+          <div class="faculty-icon">🏠</div>
+          <div class="faculty-text">
+            <div class="faculty-title">Home Tuition Experts</div>
+            <div class="faculty-desc">Qualified teachers come to your home at convenient times. Safe, comfortable learning environment with 100% personalized attention.</div>
+          </div>
+        </div>
+
+        <div class="faculty-point">
+          <div class="faculty-icon">💻</div>
+          <div class="faculty-text">
+            <div class="faculty-title">Interactive Online Classes</div>
+            <div class="faculty-desc">Live online sessions with digital whiteboard, screen sharing, and recorded classes for revision. Learn from anywhere with full interaction.</div>
+          </div>
+        </div>
+
+        <div class="faculty-point">
+          <div class="faculty-icon">🎓</div>
+          <div class="faculty-text">
+            <div class="faculty-title">IIT Alumni Mentors</div>
+            <div class="faculty-desc">All IIT-JEE mentors are IIT graduates with AIR under 100. They've walked the path your child is taking.</div>
+          </div>
+        </div>
+
+        <div class="faculty-point">
+          <div class="faculty-icon">🌍</div>
+          <div class="faculty-text">
+            <div class="faculty-title">International SAT Experts</div>
+            <div class="faculty-desc">SAT tutors with proven 1500+ score track record and deep understanding of US university admission requirements.</div>
+          </div>
+        </div>
+
+        <div class="faculty-point">
+          <div class="faculty-icon">⚡</div>
+          <div class="faculty-text">
+            <div class="faculty-title">24/7 Doubt Resolution</div>
+            <div class="faculty-desc">WhatsApp support for instant doubt clearing. No question remains unanswered for more than 2 hours.</div>
+          </div>
+        </div>
+
+        <div class="faculty-point">
+          <div class="faculty-icon">📈</div>
+          <div class="faculty-text">
+            <div class="faculty-title">Flexible Learning Options</div>
+            <div class="faculty-desc">Choose home tuitions, online classes, or hybrid mode. Switch between modes as per your convenience and needs.</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer-pro">
-    <div class="container footer-top">
-      <div class="col brand-col">
-        <div class="brand-head"><span class="brand-logo">📘</span><span class="brand-name">IITuitions</span></div>
-        <p class="brand-copy">Helping students achieve <strong>top grades</strong> and gain admission to premier institutions — with expert online classes and personalized home tuitions — across IGCSE, IB, ICSE, CBSE curricula since 2010.</p>
-        <div class="socials"><a href="#" aria-label="Instagram" class="social-btn" style="color: #dbeafe; font-size: 20px;">📷</a></div>
-      </div>
-      <div class="col">
-        <h4 class="foot-title">Quick Links</h4>
-        <ul class="foot-links">
-          <li><a href="#success-stories">Student Results</a></li>
-          <li><a href="#modes">What We Offer</a></li>
-          <li><a href="#faculty">Our Faculty</a></li>
-          <li><a href="#reviews">Student Community</a></li>
-          <li><a href="#contact">Register</a></li>
-        </ul>
-      </div>
-      <div class="col">
-        <h4 class="foot-title">Programs</h4>
-        <ul class="foot-links">
-          <li><a href="iit.html">IIT JEE Program</a></li>
-          <li><a href="sat.html">SAT Elite Program</a></li>
-          <li><a href="institutions.html">School Programs</a></li>
-          <li><a href="#online">Online Classes</a></li>
-          <li><a href="#home">Home Tuitions</a></li>
-        </ul>
-      </div>
-      <div class="col">
-        <h4 class="foot-title">Contact Us</h4>
-        <ul class="foot-contacts">
-          <li><span class="ico">📞</span><a href="tel:+917207467565">+91 72074 67565</a></li>
-          <li><span class="ico">✉️</span><a href="mailto:hello@iituitions.com">hello@iituitions.com</a></li>
-          <li class="addr">
-            <span class="ico">📍</span>
-            <div>IITuitions Hub LLP,<br/>Nallagandla, Hyderabad 500019,<br/>India</div>
-          </li>
-        </ul>
+ 
+
+
+  <!-- Mobile About Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-content">
+        <h2 class="about-title">Why IITuitions?</h2>
+        
+        <p class="about-text">
+          Since 2019, IITuitions has been the trusted choice for families seeking personalized academic excellence. We offer four distinct learning modes - Home Tuitions, Online Classes, IIT-JEE Coaching, and SAT Preparation.
+        </p>
+        
+        <p class="about-text">
+          Whether you prefer the comfort of home tutoring, the flexibility of online classes, or specialized coaching for competitive exams, our expert faculty delivers consistent results.
+        </p>
+
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <div class="highlight-number">4</div>
+            <div class="highlight-text">Learning Modes</div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-number">500+</div>
+            <div class="highlight-text">IIT Admissions</div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-number">1500+</div>
+            <div class="highlight-text">Average SAT Score</div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-number">15+</div>
+            <div class="highlight-text">Years Experience</div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="footer-bar">
-      <div class="container bar-grid">
-        <div>© <span id="yr">2025</span> IITuitions. All rights reserved.</div>
-        <nav class="bar-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
-        </nav>
+  <!-- Mobile Final CTA Section -->
+  <section class="final-cta-section">
+    <div class="final-cta-content">
+      <div class="scarcity-text">
+        ⏰ Limited seats available - Book now to secure your preferred time slot
+      </div>
+      
+      <h2 class="final-cta-title">Start Your Child's Success Journey Today</h2>
+      <p class="final-cta-subtitle">Choose home tuitions, online classes, IIT coaching, or SAT prep. Expert tutors ready to transform your child's academic performance.</p>
+      
+      <div class="hero-ctas">
+        <a href="#book-assessment" class="btn-hero-primary">
+          🚀 Book Free Assessment Now
+        </a>
+        <a href="tel:+917207467565" class="btn-hero-secondary">
+          📞 Call for Immediate Booking
+        </a>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- Floating actions -->
-  <a class="wa-float"
-     href="https://wa.me/917207467565?text=Hi%20IITuitions%2C%20I%20want%20to%20know%20about%20online%20classes%20and%20home%20tuitions"
-     target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488"/>
-     </svg>
-  </a>
+  <!-- Mobile Form Section -->
+  <section class="form-section" id="book-assessment">
+    <div class="container">
+      <div class="form-container">
+        <h3 class="form-title">Book Your Free Academic Assessment</h3>
+        <p class="form-subtitle">Discover your child's learning potential and get a personalized study plan</p>
+        
+        <form id="assessmentForm">
+          <div class="form-row">
+            <label>Student's Name *</label>
+            <input type="text" name="student_name" required placeholder="Enter student's full name">
+          </div>
+          
+          <div class="form-row">
+            <label>Parent's Phone Number *</label>
+            <input type="tel" name="parent_phone" required placeholder="+91 9876543210">
+          </div>
+          
+          <div class="form-row">
+            <label>Email Address *</label>
+            <input type="email" name="email" required placeholder="parent@example.com">
+          </div>
+          
+          <div class="form-row">
+            <label>Preferred Learning Mode *</label>
+            <select name="learning_mode" required>
+              <option value="">Select Learning Mode</option>
+              <option value="home-tuition">Home Tuition (Teacher visits your home)</option>
+              <option value="online-classes">Online Classes</option>
+              <option value="iit-coaching">IIT-JEE Coaching</option>
+              <option value="sat-preparation">SAT Preparation</option>
+              <option value="not-sure">Not Sure / Need Guidance</option>
+            </select>
+          </div>
+          
+          <div class="form-row">
+            <label>Current Class/Grade</label>
+            <select name="current_class">
+              <option value="">Select Class</option>
+              <option value="grade-1-5">Class 1-5</option>
+              <option value="grade-6-8">Class 6-8</option>
+              <option value="grade-9-10">Class 9-10</option>
+              <option value="grade-11-12">Class 11-12</option>
+              <option value="iit-aspirant">IIT Aspirant</option>
+              <option value="sat-aspirant">SAT Aspirant</option>
+            </select>
+          </div>
+          
+          <button type="submit" class="btn-form">
+            Get My Free Assessment & Study Plan
+          </button>
+        </form>
+        
+        <p class="form-note">
+          📞 We'll call you within 2 hours to schedule your assessment<br>
+          🔒 Your information is 100% secure and confidential
+        </p>
+      </div>
+    </div>
+  </section>
 
-  <a id="bookCTA" class="cta-float-right"
-     href="https://wa.me/917207467565?text=Hi%20IITuitions%2C%20book%20my%20free%20demo%20class"
-     target="_blank" rel="noopener">
-     Book Free Demo
+  <!-- Mobile WhatsApp Float -->
+  <a class="wa-float" href="https://wa.me/917207467565?text=Hi%20IITuitions%2C%20I%20want%20free%20assessment" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488"/>
+    </svg>
   </a>
 
   <script>
-    // Mobile menu functionality
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      const hamburger = document.getElementById('hamburgerBtn');
+    // Mobile-optimized JavaScript
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const headerHeight = 60; // Account for sticky header
+          const targetPosition = target.offsetTop - headerHeight;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Enhanced form submission for mobile
+    document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
       
-      if (menu && hamburger) {
-        menu.classList.toggle('active');
-        hamburger.classList.toggle('active');
+      // Add loading state
+      const submitBtn = this.querySelector('.btn-form');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Submitting...';
+      submitBtn.disabled = true;
+      
+      // Get form data
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+      
+      // Create WhatsApp message
+      const message = `Hi IITuitions, I want to book free assessment for:
+      
+Student: ${data.student_name}
+Parent Phone: ${data.parent_phone}
+Email: ${data.email}
+Learning Mode: ${data.learning_mode}
+Class: ${data.current_class || 'Not specified'}
+
+Please schedule our assessment and provide more details.`;
+      
+      // Redirect to WhatsApp
+      const whatsappUrl = `https://wa.me/917207467565?text=${encodeURIComponent(message)}`;
+      
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+        
+        // Show success message
+        alert('Thank you! Redirecting to WhatsApp to complete your booking. We will call you within 2 hours.');
+        
+        // Reset form and button
+        this.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }, 500);
+    });
+
+    // Mobile touch interactions
+    function addTouchFeedback() {
+      const interactiveElements = document.querySelectorAll('.btn-hero-primary, .btn-hero-secondary, .program-cta, .btn-form, .header-cta, .trust-stat, .program-card');
+      
+      interactiveElements.forEach(element => {
+        element.addEventListener('touchstart', function() {
+          this.style.transform = 'scale(0.98)';
+        }, { passive: true });
+        
+        element.addEventListener('touchend', function() {
+          setTimeout(() => {
+            this.style.transform = '';
+          }, 100);
+        }, { passive: true });
+        
+        element.addEventListener('touchcancel', function() {
+          this.style.transform = '';
+        }, { passive: true });
+      });
+    }
+
+    // Intersection Observer for mobile animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -30px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Mobile scroll indicators for horizontal sections
+    function addScrollIndicators() {
+      const scrollContainer = document.querySelector('.success-scroll');
+      if (scrollContainer) {
+        const indicator = document.createElement('div');
+        indicator.innerHTML = '← Swipe to see more success stories →';
+        indicator.style.cssText = `
+          text-align: center;
+          font-size: 11px;
+          color: #666;
+          margin-top: 8px;
+          opacity: 0.7;
+          font-weight: 600;
+        `;
+        scrollContainer.parentNode.appendChild(indicator);
+        
+        // Hide indicator after user scrolls
+        let hasScrolled = false;
+        scrollContainer.addEventListener('scroll', function() {
+          if (!hasScrolled) {
+            indicator.style.opacity = '0.3';
+            hasScrolled = true;
+          }
+        }, { once: true, passive: true });
       }
     }
 
-    // Close menu when clicking on a link or overlay
-    function closeMenu() {
-      const menu = document.getElementById('mobileMenu');
-      const btn = document.getElementById('hamburgerBtn');
-      
-      if (menu && btn) {
-        menu.classList.remove('active');
-        btn.classList.remove('active');
-      }
+    // Mobile viewport height fix
+    function setVH() {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
 
-    // Close menu when clicking outside (mobile only)
-    function closeMenuOnOutsideClick(e) {
-      const menu = document.getElementById('mobileMenu');
-      const btn = document.getElementById('hamburgerBtn');
-      
-      if (window.innerWidth < 768 && menu && btn && 
-          !menu.contains(e.target) && !btn.contains(e.target) && 
-          menu.classList.contains('active')) {
-        menu.classList.remove('active');
-        btn.classList.remove('active');
-      }
-    }
-
-    // Initialize when DOM is loaded
+    // Initialize mobile optimizations
     document.addEventListener('DOMContentLoaded', function() {
-      // Add click event to hamburger button
-      const hamburgerBtn = document.getElementById('hamburgerBtn');
-      if (hamburgerBtn) {
-        hamburgerBtn.addEventListener('click', toggleMobileMenu);
-      }
+      // Add touch feedback
+      addTouchFeedback();
       
-      // Add click events to menu links
-      const menuLinks = document.querySelectorAll('#mobileMenu a');
-      menuLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
+      // Add scroll indicators
+      addScrollIndicators();
+      
+      // Set viewport height
+      setVH();
+      
+      // Observe sections for animation
+      document.querySelectorAll('.trust-section, .programs-section, .problem-section, .success-section, .faculty-section, .guarantees-section, .about-section').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(section);
       });
       
-      // Add outside click listener
-      document.addEventListener('click', closeMenuOnOutsideClick);
-
-      // Update year in footer
-      const yearElement = document.getElementById('yr');
-      if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-      }
+      // Prevent zoom on input focus (iOS)
+      const inputs = document.querySelectorAll('input, select, textarea');
+      inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+          const viewport = document.querySelector('meta[name=viewport]');
+          viewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
+        });
+        
+        input.addEventListener('blur', function() {
+          const viewport = document.querySelector('meta[name=viewport]');
+          viewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
+        });
+      });
     });
 
-    // Handle window resize
-    window.addEventListener('resize', function() {
-      if (window.innerWidth >= 768) {
-        closeMenu();
-      }
+    // Handle orientation changes
+    window.addEventListener('orientationchange', function() {
+      setTimeout(setVH, 100);
     });
 
-    // Handle escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeMenu();
-      }
-    });
+    // Handle resize events
+    window.addEventListener('resize', setVH);
+
+    // Performance optimization for mobile
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => {
+        // Preload critical assets
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = 'https://wa.me/917207467565';
+        document.head.appendChild(link);
+      });
+    }
   </script>
+
 </body>
 </html>
