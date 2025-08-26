@@ -865,7 +865,7 @@
       font-size: 14px;
     }
 
-    /* Comparison Section - Traditional vs IITuitions */
+    /* Comparison Section - Updated with Two Separate Tables */
     .comparison-section {
       padding: 50px 12px;
       background: var(--bg-secondary);
@@ -874,46 +874,35 @@
     .comparison-container {
       max-width: 1000px;
       margin: 0 auto;
-    }
-
-    .vs-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .comparison-table {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 30px;
+      gap: 40px;
     }
 
-    .comparison-card {
+    /* Table Wrapper Styles */
+    .table-wrapper {
+      background: white;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 8px 30px var(--shadow-medium);
-      background: white;
+      border: 1px solid var(--shadow-light);
     }
 
-    .comparison-header {
-      padding: 20px;
+    .table-header {
+      padding: 20px 24px;
       text-align: center;
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
       position: relative;
     }
 
-    .traditional-card .comparison-header {
+    .traditional-header {
       background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
-      color: white;
     }
 
-    .iituitions-card .comparison-header {
+    .iituitions-header {
       background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-      color: white;
-    }
-
-    .comparison-header h3 {
-      font-size: 20px;
-      font-weight: 700;
-      margin: 0;
     }
 
     .urgency-badge {
@@ -929,23 +918,59 @@
       animation: pulse 2s infinite;
     }
 
-    .comparison-points {
-      padding: 0;
+    .success-badge {
+      position: absolute;
+      top: -8px;
+      right: 20px;
+      background: var(--positive-color);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
     }
 
-    .comparison-point {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
+    /* Table Styles */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .comparison-table th {
+      background: #f8f9fa;
       padding: 16px 20px;
-      border-bottom: 1px solid var(--shadow-light);
+      text-align: left;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      border-bottom: 2px solid var(--shadow-light);
     }
 
-    .comparison-point:last-child {
+    .comparison-table td {
+      padding: 20px 20px;
+      border-bottom: 1px solid var(--shadow-light);
+      vertical-align: top;
+    }
+
+    .comparison-table tr:last-child td {
       border-bottom: none;
     }
 
-    .point-icon {
+    .traditional-table td {
+      background: #fef2f2;
+    }
+
+    .iituitions-table td {
+      background: #f0fdf4;
+    }
+
+    .feature-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .feature-icon {
       width: 24px;
       height: 24px;
       border-radius: 50%;
@@ -958,21 +983,78 @@
       margin-top: 2px;
     }
 
-    .negative .point-icon {
+    .negative-icon {
       background: var(--negative-color);
       color: white;
     }
 
-    .positive .point-icon {
+    .positive-icon {
       background: var(--positive-color);
       color: white;
     }
 
-    .comparison-point p {
-      margin: 0;
-      font-size: 14px;
-      line-height: 1.5;
+    .feature-text {
       color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
+      }
+      50% {
+        box-shadow: 0 6px 20px rgba(239, 68, 68, 0.7);
+      }
+      100% {
+        box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
+      }
+    }
+
+    /* YouTube Video Section */
+    .video-section {
+      padding: 50px 12px;
+      background: var(--bg-primary);
+      text-align: center;
+    }
+
+    .video-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px var(--shadow-medium);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+    }
+
+    /* Mobile optimizations for video */
+    @media (max-width: 400px) {
+      .video-section {
+        padding: 40px 8px;
+      }
+      
+      .video-wrapper {
+        border-radius: 12px;
+      }
+      
+      .video-wrapper iframe {
+        border-radius: 12px;
+      }
     }
 
     /* CTA Section - Mobile */
@@ -1065,61 +1147,16 @@
     }
     
     .founder-quote {
-  background: rgba(255, 255, 255, 0.1);
-  border-left: 3px solid #dbeafe;
-  padding: 15px;
-  margin: 15px 0;
-  border-radius: 8px;
-  color: #e0f2fe;
-  font-style: italic;
-  font-size: 14px;
-  line-height: 1.5;
-}
-    /* YouTube Video Section */
-.video-section {
-  padding: 50px 12px;
-  background: var(--bg-primary);
-  text-align: center;
-}
-
-.video-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 30px var(--shadow-medium);
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 16px;
-}
-
-/* Mobile optimizations for video */
-@media (max-width: 400px) {
-  .video-section {
-    padding: 40px 8px;
-  }
-  
-  .video-wrapper {
-    border-radius: 12px;
-  }
-  
-  .video-wrapper iframe {
-    border-radius: 12px;
-  }
-}
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 3px solid #dbeafe;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 8px;
+      color: #e0f2fe;
+      font-style: italic;
+      font-size: 14px;
+      line-height: 1.5;
+    }
 
     .foot-title {
       font-size: 16px;
@@ -1219,18 +1256,6 @@
     .limited-seats-float:hover {
       background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
       transform: translateX(-50%) scale(1.05);
-    }
-
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
-      }
-      50% {
-        box-shadow: 0 6px 20px rgba(239, 68, 68, 0.7);
-      }
-      100% {
-        box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
-      }
     }
 
     /* Floating action buttons - Mobile Optimized */
@@ -1359,6 +1384,28 @@
         font-size: 14px;
         padding: 14px 20px;
       }
+
+      .comparison-container {
+        gap: 30px;
+      }
+      
+      .table-header {
+        padding: 16px 20px;
+        font-size: 18px;
+      }
+      
+      .comparison-table th {
+        padding: 14px 16px;
+        font-size: 15px;
+      }
+      
+      .comparison-table td {
+        padding: 16px 16px;
+      }
+      
+      .feature-text {
+        font-size: 14px;
+      }
     }
 
     /* Desktop and tablet styles */
@@ -1458,9 +1505,27 @@
       }
 
       /* Desktop Layout for Comparison */
-      .comparison-table {
+      .comparison-container {
         grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        gap: 40px;
+      }
+      
+      .table-header {
+        padding: 24px 32px;
+        font-size: 22px;
+      }
+      
+      .comparison-table th {
+        padding: 20px 24px;
+        font-size: 17px;
+      }
+      
+      .comparison-table td {
+        padding: 24px 24px;
+      }
+      
+      .feature-text {
+        font-size: 16px;
       }
     }
 
@@ -1485,7 +1550,7 @@
         font-size: 48px;
       }
 
-      .comparison-table {
+      .comparison-container {
         gap: 50px;
       }
     }
@@ -1509,7 +1574,7 @@
         --shadow-medium: rgba(0, 0, 0, 0.5);
       }
       
-      .success-card, .faculty-card, .review-card, .guarantee-card, .comparison-card {
+      .success-card, .faculty-card, .review-card, .guarantee-card, .table-wrapper {
         border-width: 2px;
       }
     }
@@ -1791,23 +1856,178 @@
     </div>
   </section>
 
-  <!-- Mobile Why Choose Us -->
-  <section class="why-section" id="why-section">
-    <div class="why-content">
-      <h2 class="why-title">The Hidden Truth About JEE Preparation</h2>
-      <p class="why-subtitle">Most coaching focuses on content delivery. We focus on rank improvement through personalized execution.</p>
+  <!-- Comparison Section - Replaces Why Choose Us -->
+  <section class="comparison-section" id="why-section">
+    <div class="container">
+      <h2 class="section-title">The Hidden Truth About JEE Preparation</h2>
+      <p class="section-subtitle">Most coaching focuses on content delivery. We focus on rank improvement through personalized execution.</p>
       
-      <div class="problems-solutions">
-        <div class="problem-solution-card">
-          <div class="problem">
-            <h4>❌ Traditional Coaching</h4>
-            <p>Classrooms accommodate 80+ students simultaneously, making personalized attention virtually impossible. When students struggle to grasp complex concepts, the accelerated pace during revision phases compounds their difficulties. Over time, many students discover that mass coaching methodologies fail to align with their individual learning requirements and academic goals.</p>
+      <div class="comparison-container">
+        
+        <!-- Traditional Coaching Table -->
+        <div class="table-wrapper">
+          <div class="table-header traditional-header">
+            Traditional Coaching Problems
+            <div class="urgency-badge">Outdated</div>
           </div>
-          <div class="solution">
-            <h4>✅ IITuitions Solution</h4>
-            <p>Our educational framework prioritizes complete individualized attention through our elite faculty program. We maintain an exclusive enrollment cap of 50 students annually to ensure optimal one-on-one mentorship. Our comprehensive assessment process identifies specific academic weaknesses across subjects, topics, and numerical applications. Based on each student's unique potential and learning profile, we develop customized academic roadmaps with structured milestones. Progress evaluations occur bi-weekly to ensure adherence to planned trajectories and allow for strategic adjustments. All instructional sessions are digitally recorded to maximize learning efficiency and enable review. We integrate advanced 3D visualization technologies and curated premium educational content to ensure superior conceptual clarity and comprehension.</p>
-          </div>
+          <table class="comparison-table traditional-table">
+            <thead>
+              <tr>
+                <th>Key Issues</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="feature-content">
+                    <div class="feature-icon negative-icon">×</div>
+                    <div class="feature-text">
+                      <strong>Large Class Sizes:</strong> 80+ students in one class making individual attention nearly impossible for teachers to provide personalized guidance.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-content">
+                    <div class="feature-icon negative-icon">×</div>
+                    <div class="feature-text">
+                      <strong>Fast-Paced Revision:</strong> When students don't understand a topic initially, during revision time that same topic is taught even faster, making it harder to grasp.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-content">
+                    <div class="feature-icon negative-icon">×</div>
+                    <div class="feature-text">
+                      <strong>Student Realization:</strong> Many students slowly realize that traditional coaching cannot provide the individual help they desperately need for JEE success.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-content">
+                    <div class="feature-icon negative-icon">×</div>
+                    <div class="feature-text">
+                      <strong>No Recorded Sessions:</strong> Classes are not recorded, so students miss crucial explanations forever if they didn't understand during live sessions.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-content">
+                    <div class="feature-icon negative-icon">×</div>
+                    <div class="feature-text">
+                      <strong>Outdated Teaching Methods:</strong> Traditional methods without modern productive tools that make concepts easier to understand and retain.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-content">
+                    <div class="feature-icon negative-icon">×</div>
+                    <div class="feature-text">
+                      <strong>Generic Content:</strong> Limited educational resources without access to high-quality, specialized content that matches individual learning needs.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+
+        <!-- IITuitions Solutions Table -->
+        <div class="table-wrapper">
+          <div class="table-header iituitions-header">
+            IITuitions Solutions
+            <div class="success-badge">Proven</div>
+          </div>
+          <table class="comparison-table iituitions-table">
+            <thead>
+              <tr>
+                <th>Our Advantages</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="feature-content">
+                    <div class="feature-icon positive-icon">✓</div>
+                    <div class="feature-text">
+                      <strong>Complete One-on-One Focus:</strong> 100% individual attention with personal mentorship approach, ensuring every student gets dedicated guidance.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-content">
+                    <div class="feature-icon positive-icon">✓</div>
+                    <div class="feature-text">
+                      <strong>Team of Best Teachers:</strong> Our carefully selected team of elite faculty members provide expert guidance with proven track records in JEE success.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-content">
+                    <div class="feature-icon positive-icon">✓</div>
+                    <div class="feature-text">
+                      <strong>Limited Admissions:</strong> We deliberately take maximum 50 students per year to maintain our commitment to individual attention and quality education.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-content">
+                    <div class="feature-icon positive-icon">✓</div>
+                    <div class="feature-text">
+                      <strong>Personalized Roadmaps:</strong> We identify each student's exact problems, understand which topics they're weak in, and create customized study plans accordingly.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-content">
+                    <div class="feature-icon positive-icon">✓</div>
+                    <div class="feature-text">
+                      <strong>Every 15-Day Progress Check:</strong> We monitor whether students are following their personalized roadmap 100% and make adjustments every 15 days for optimal results.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-content">
+                    <div class="feature-icon positive-icon">✓</div>
+                    <div class="feature-text">
+                      <strong>100% Recorded Sessions:</strong> Every single session is completely recorded so students can revisit difficult concepts anytime for better understanding.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-content">
+                    <div class="feature-icon positive-icon">✓</div>
+                    <div class="feature-text">
+                      <strong>Productive Learning Tools:</strong> We use advanced productive tools and high-end YouTube channels to ensure concepts are explained in the most understandable way possible.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
       </div>
     </div>
   </section>
@@ -1833,44 +2053,6 @@
           </div>
           <p class="faculty-description">
             "In my sessions, I start with a quick assessment of what the student learned last time, then dive into new concepts with live problem-solving. I record every session so students can revisit difficult topics. During each 90-minute session, I track their response time and accuracy to adjust the difficulty level immediately."
-          </p>
-          <div class="specialization-tags">
-            <span class="tag">Physics</span>
-            <span class="tag">Mathematics</span>
-            <span class="tag">15+ Years</span>
-          </div>
-        </div>
-
-        <!-- Keshav Card -->
-        <div class="faculty-card">
-          <div class="faculty-header">
-            <img src="https://via.placeholder.com/80x80/000000/FFFFFF?text=K" alt="Keshav Profile" class="faculty-avatar-img">
-            <div class="faculty-info">
-              <h3>Keshav</h3>
-              <p class="faculty-qualification">NIT Delhi Graduate</p>
-            </div>
-          </div>
-          <p class="faculty-description">
-            "My sessions are interactive with real-time whiteboard work where students solve problems while I guide them. I maintain a session log noting which topics they struggled with and time spent on each concept. Every session ends with a quick quiz to ensure concepts are clear before moving forward."
-          </p>
-          <div class="specialization-tags">
-            <span class="tag">Chemistry</span>
-            <span class="tag">Mathematics</span>
-            <span class="tag">Interactive</span>
-          </div>
-        </div>
-
-        <!-- Jyothi Card -->
-        <div class="faculty-card">
-          <div class="faculty-header">
-            <img src="https://via.placeholder.com/80x80/000000/FFFFFF?text=J" alt="Jyothi Profile" class="faculty-avatar-img">
-            <div class="faculty-info">
-              <h3>Jyothi</h3>
-              <p class="faculty-qualification">IIT JEE Physics Faculty</p>
-            </div>
-          </div>
-          <p class="faculty-description">
-            "During our sessions, I use 3D visualization tools and conduct live experiments to make Physics concepts clear. I track student understanding by asking them to explain concepts back to me mid-session. Each session includes practice problems with immediate feedback and doubt resolution."
           </p>
           <div class="specialization-tags">
             <span class="tag">Physics</span>
@@ -1900,25 +2082,25 @@
       </div>
     </div>
   </section>
+
   <!-- YouTube Video Section -->
-<section class="video-section">
-  <div class="container">
-    <h2 class="section-title">See Our Success Story</h2>
-    <p class="section-subtitle">Watch how our personalized mentoring transforms students' JEE preparation journey</p>
-    
-    <div class="video-container">
-      <div class="video-wrapper">
-        <iframe 
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-          title="IITuitions Success Story Video"
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
+  <section class="video-section">
+    <div class="container">
+      <p class="section-subtitle">Watch how our personalized mentoring transforms students' JEE preparation journey</p>
+      
+      <div class="video-container">
+        <div class="video-wrapper">
+          <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="IITuitions Success Story Video"
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Mobile Parent Reviews -->
   <section class="reviews-section" id="reviews">
@@ -2047,8 +2229,6 @@
       </div>
     </div>
   </section>
-
-
 
   <!-- Mobile CTA -->
   <section class="cta-section">
@@ -2367,3 +2547,41 @@
 
 </body>
 </html>
+            <span class="tag">Physics</span>
+            <span class="tag">Mathematics</span>
+            <span class="tag">15+ Years</span>
+          </div>
+        </div>
+
+        <!-- Keshav Card -->
+        <div class="faculty-card">
+          <div class="faculty-header">
+            <img src="https://via.placeholder.com/80x80/000000/FFFFFF?text=K" alt="Keshav Profile" class="faculty-avatar-img">
+            <div class="faculty-info">
+              <h3>Keshav</h3>
+              <p class="faculty-qualification">NIT Delhi Graduate</p>
+            </div>
+          </div>
+          <p class="faculty-description">
+            "My sessions are interactive with real-time whiteboard work where students solve problems while I guide them. I maintain a session log noting which topics they struggled with and time spent on each concept. Every session ends with a quick quiz to ensure concepts are clear before moving forward."
+          </p>
+          <div class="specialization-tags">
+            <span class="tag">Chemistry</span>
+            <span class="tag">Mathematics</span>
+            <span class="tag">Interactive</span>
+          </div>
+        </div>
+
+        <!-- Jyothi Card -->
+        <div class="faculty-card">
+          <div class="faculty-header">
+            <img src="https://via.placeholder.com/80x80/000000/FFFFFF?text=J" alt="Jyothi Profile" class="faculty-avatar-img">
+            <div class="faculty-info">
+              <h3>Jyothi</h3>
+              <p class="faculty-qualification">IIT JEE Physics Faculty</p>
+            </div>
+          </div>
+          <p class="faculty-description">
+            "During our sessions, I use 3D visualization tools and conduct live experiments to make Physics concepts clear. I track student understanding by asking them to explain concepts back to me mid-session. Each session includes practice problems with immediate feedback and doubt resolution."
+          </p>
+          <div class="specialization-tags">
